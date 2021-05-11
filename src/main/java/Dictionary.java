@@ -48,7 +48,7 @@ public class Dictionary {
 
     private static final String[] SPECIAL_CHARACTERS = {".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}"};
 
-    private static String getNormalizeToken(String token) {
+    public static String getNormalizeToken(String token) {
         token = token.toLowerCase();
         for (String suffix : SPECIAL_CHARACTERS) {
             if (token.startsWith(suffix)) {
@@ -62,7 +62,7 @@ public class Dictionary {
         return token;
     }
 
-    private static ArrayList<String> getListOfTokenFromFile(String docPath) {
+    public static ArrayList<String> getListOfTokenFromFile(String docPath) {
         Scanner inputStream = null;
         try {
             inputStream = new Scanner(new File(docPath));
