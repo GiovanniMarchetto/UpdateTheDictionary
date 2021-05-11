@@ -64,16 +64,16 @@ public class Dictionary {
     }
 
     public static void printDictionary() {
-        System.out.println("//////////////////////////////");
+        System.out.println("\n//////////////////////////////");
         System.out.println("//////////DICTIONARY//////////");
         System.out.println("//////////////////////////////");
 
         AtomicInteger counter = new AtomicInteger();
         dictionary.forEach((key, postingList) -> {
-            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t"+key);
+            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + key);
             else System.out.println(key);
             for (String s : postingList) {
-                if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t"+"|---" + s);
+                if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + "|---" + s);
                 else System.out.println("|---" + s);
             }
             counter.getAndIncrement();
@@ -82,4 +82,19 @@ public class Dictionary {
         System.out.println("//////////////////////////////");
         System.out.println("//////////////////////////////");
     }
+
+    public static void printDocumentList() {
+        System.out.println("\n******************************");
+        System.out.println("******* DOCUMENT LIST ********");
+
+        if (documentList == null || documentList.isEmpty()) {
+            System.out.println("The list is empty!");
+        } else {
+            for (String doc : documentList) {
+                System.out.println(doc);
+            }
+        }
+        System.out.println("******************************");
+    }
+
 }
