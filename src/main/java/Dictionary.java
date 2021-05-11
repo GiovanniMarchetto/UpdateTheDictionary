@@ -28,6 +28,7 @@ public class Dictionary {
         ArrayList<String> tokenList = getListOfTokenFromFile(docPath);
 
         for (String token : tokenList) {
+            token = getNormalizeToken(token);
             ArrayList<String> postingList = new ArrayList<>();
 
             if (dictionary.containsKey(token)) {
@@ -43,6 +44,22 @@ public class Dictionary {
         }
 
         return true;
+    }
+
+    private static final String[] SPECIAL_CHARACTERS = {".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}"};
+
+    private static String getNormalizeToken(String token) {
+        token = token.toLowerCase();
+        for (String suffix : SPECIAL_CHARACTERS) {
+            if (token.startsWith(suffix)) {
+                token = token.substring(1);
+            }
+            if (token.endsWith(suffix)) {
+                token = token.substring(0, token.length() - 1);
+            }
+        }
+
+        return token;
     }
 
     private static ArrayList<String> getListOfTokenFromFile(String docPath) {
