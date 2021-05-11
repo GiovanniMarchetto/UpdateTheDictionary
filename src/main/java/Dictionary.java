@@ -17,15 +17,11 @@ public class Dictionary {
     public static void addDocumentAtDictionary(String docPath) {
         String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
 
-        // TODO: is UUID really unique if we cast in to 8 characters? -> this doubt bring to this 'for' of control
-//        for (int i = 0; i < documentList.size(); i++) {
-//            if (docID.equals(documentList.get(i))) {
-//                docID = UUID.randomUUID().toString().substring(0, 8);
-//                i = -1;
-//            }
-//        }
+        // WARNING: if we add too document it can explode
+        while (documentList.contains(docID)){
+            docID = UUID.randomUUID().toString().substring(0, 8);
+        }
 
-        //TODO: control if the doc is already present in the dictionary
         documentList.add(docID);
 
         ArrayList<String> tokenList = getListOfTokenFromFile(docPath);
