@@ -6,16 +6,16 @@ public class normalizationTest {
 
     @Test
     void theMaiusc() {
-        assertEquals("the",Dictionary.getNormalizeToken("THE"));
+        assertEquals("the", Miscellaneous.getNormalizeToken("THE"));
     }
 
     @Test
     void theDot() {
-        assertEquals("the",Dictionary.getNormalizeToken("ThE."));
+        assertEquals("the", Miscellaneous.getNormalizeToken("ThE."));
     }
 
     @Test
     void thePar() {
-        assertEquals("the",Dictionary.getNormalizeToken("(ThE."));
+        assertEquals("the", Miscellaneous.getNormalizeToken("(ThE."));
     }
 }

@@ -8,8 +8,8 @@ public class addBasicDocumentAtDictionary {
     void add_doc_A() {
         String docPath = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "A.txt";
         assertTrue(Dictionary.addDocumentAtDictionary(docPath));
-        Dictionary.printDictionary();
-        Dictionary.printDocumentList();
+        Miscellaneous.printDictionary();
+        Miscellaneous.printDocumentList();
     }
 
 }
