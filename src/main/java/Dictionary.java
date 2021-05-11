@@ -1,6 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Dictionary {
 
@@ -15,16 +19,17 @@ public class Dictionary {
         String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
 
         // WARNING: if we add too document it can explode
-        while (documentList.contains(docID)){
+        while (documentList.contains(docID)) {
             docID = UUID.randomUUID().toString().substring(0, 8);
         }
 
         documentList.add(docID);
 
         ArrayList<String> tokenList = getListOfTokenFromFile(docPath);
-        ArrayList<String> postingList = new ArrayList<>();
 
         for (String token : tokenList) {
+            ArrayList<String> postingList = new ArrayList<>();
+
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
                 if (!postingList.contains(docID)) {
@@ -63,21 +68,17 @@ public class Dictionary {
         System.out.println("//////////DICTIONARY//////////");
         System.out.println("//////////////////////////////");
 
-        System.out.println("\n------------------------------");
-
-
-        for (Map.Entry<String, ArrayList<String>> entry : dictionary.entrySet()) {
-            String key = entry.getKey();
-
-            System.out.println(key);
-            ArrayList<String> postingList = entry.getValue();
+        AtomicInteger counter = new AtomicInteger();
+        dictionary.forEach((key, postingList) -> {
+            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t"+key);
+            else System.out.println(key);
             for (String s : postingList) {
-                System.out.println("|---" + s);
+                if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t"+"|---" + s);
+                else System.out.println("|---" + s);
             }
-            System.out.println("------------------------------");
-        }
+            counter.getAndIncrement();
+        });
 
-        System.out.println("//////////////////////////////");
         System.out.println("//////////////////////////////");
         System.out.println("//////////////////////////////");
     }
