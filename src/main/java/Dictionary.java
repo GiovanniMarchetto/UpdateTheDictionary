@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class Dictionary {
 
@@ -14,7 +11,7 @@ public class Dictionary {
 
     }
 
-    public static void addDocumentAtDictionary(String docPath) {
+    public static boolean addDocumentAtDictionary(String docPath) {
         String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
 
         // WARNING: if we add too document it can explode
@@ -39,6 +36,8 @@ public class Dictionary {
                 dictionary.put(token, postingList);
             }
         }
+
+        return true;
     }
 
     private static ArrayList<String> getListOfTokenFromFile(String docPath) {
@@ -57,5 +56,29 @@ public class Dictionary {
         }
         inputStream.close();
         return tokenList;
+    }
+
+    public static void printDictionary() {
+        System.out.println("//////////////////////////////");
+        System.out.println("//////////DICTIONARY//////////");
+        System.out.println("//////////////////////////////");
+
+        System.out.println("\n------------------------------");
+
+
+        for (Map.Entry<String, ArrayList<String>> entry : dictionary.entrySet()) {
+            String key = entry.getKey();
+
+            System.out.println(key);
+            ArrayList<String> postingList = entry.getValue();
+            for (String s : postingList) {
+                System.out.println("|---" + s);
+            }
+            System.out.println("------------------------------");
+        }
+
+        System.out.println("//////////////////////////////");
+        System.out.println("//////////////////////////////");
+        System.out.println("//////////////////////////////");
     }
 }
