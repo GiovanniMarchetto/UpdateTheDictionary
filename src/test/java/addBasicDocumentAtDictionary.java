@@ -1,15 +1,15 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class addBasicDocumentAtDictionary {
 
     @Test
     void add_doc_A() {
+        Dictionary dictionary = new Dictionary();
         String docPath = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "A.txt";
-        assertTrue(Dictionary.addDocumentAtDictionary(docPath));
-        Miscellaneous.printDictionary();
-        Miscellaneous.printDocumentList();
+        dictionary.addDocumentAtDictionary(docPath);
+        assertEquals(1,dictionary.getDocumentList().size());
     }
 
 }

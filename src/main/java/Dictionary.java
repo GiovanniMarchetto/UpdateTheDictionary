@@ -1,66 +1,92 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Dictionary {
 
-    static ArrayList<String> documentList = new ArrayList<>();
-    static HashMap<String, ArrayList<String>> dictionary = new HashMap<>();
+    private HashMap<String, PostingList> dictionary;
 
-    public static void main(String... args) {
+    private ArrayList<String> documentList;
 
+    public Dictionary() {
+        dictionary = new HashMap<>();
+        documentList = new ArrayList<>();
     }
 
-    public static boolean addDocumentAtDictionary(String docPath) {
-        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
+    public HashMap<String, PostingList> getDictionary() {
+        return dictionary;
+    }
 
+    public void setDictionary(HashMap<String, PostingList> dictionary) {
+        this.dictionary = dictionary;
+    }
+
+    public ArrayList<String> getDocumentList() {
+        return documentList;
+    }
+
+    public void setDocumentList(ArrayList<String> documentList) {
+        this.documentList = documentList;
+    }
+
+    public void addDocumentAtDictionary(String docPath) {
+        /*        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
         // WARNING: if we add too document it can explode
-        while (documentList.contains(docID)) {
-            docID = UUID.randomUUID().toString().substring(0, 8);
-        }
+        //        while (this.documentList.contains(docID)) {
+        //            docID = UUID.randomUUID().toString().substring(0, 8);}
+        */
+        String docID = UUID.randomUUID().toString().substring(0, 8);
+        this.documentList.add(docID);
 
-        documentList.add(docID);
-
-        ArrayList<String> tokenList = getListOfTokenFromFile(docPath);
+        ArrayList<String> tokenList = Miscellaneous.getListOfTokenFromFile(docPath);
+        int positionOfToken = 1;
 
         for (String token : tokenList) {
             token = Miscellaneous.getNormalizeToken(token);
-            ArrayList<String> postingList = new ArrayList<>();
 
+            PostingList postingList = new PostingList();
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
-                if (!postingList.contains(docID)) {
-                    postingList.add(docID);
-                }
-                dictionary.replace(token, dictionary.get(token), postingList);
-            } else {
-                postingList.add(docID);
-                dictionary.put(token, postingList);
             }
+            postingList.addPosting(docID, positionOfToken);
+            dictionary.put(token, postingList);
+            positionOfToken++;
         }
-
-        return true;
     }
 
-    public static ArrayList<String> getListOfTokenFromFile(String docPath) {
-        Scanner inputStream = null;
-        try {
-            inputStream = new Scanner(new File(docPath));
-        } catch (FileNotFoundException e) {
-            System.out.println("Document not found " + docPath);
-            System.exit(0);
-        }
+    public void printDictionary() {
+        System.out.println("\n//////////////////////////////");
+        System.out.println("//////////DICTIONARY//////////");
+        System.out.println("//////////////////////////////");
 
-        ArrayList<String> tokenList = new ArrayList<>();
-        while (inputStream.hasNext()) {
-            String token = inputStream.next();
-            tokenList.add(token);
+        AtomicInteger counter = new AtomicInteger();
+        this.dictionary.forEach((term, postingList) -> {
+
+            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + term);
+            else System.out.println(term);
+
+            postingList.printPostingListForDictionary(counter);
+
+            counter.getAndIncrement();
+        });
+
+        System.out.println("//////////////////////////////");
+        System.out.println("//////////////////////////////");
+    }
+
+    public void printDocumentList() {
+        System.out.println("\n******************************");
+        System.out.println("******* DOCUMENT LIST ********");
+
+        if (this.documentList == null || this.documentList.isEmpty()) {
+            System.out.println("The list is empty!");
+        } else {
+            for (String doc : this.documentList) {
+                System.out.println(doc);
+            }
         }
-        inputStream.close();
-        return tokenList;
+        System.out.println("******************************");
     }
 
 }

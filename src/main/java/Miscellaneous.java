@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Miscellaneous {
@@ -17,37 +21,23 @@ public class Miscellaneous {
         return token;
     }
 
-    public static void printDictionary() {
-        System.out.println("\n//////////////////////////////");
-        System.out.println("//////////DICTIONARY//////////");
-        System.out.println("//////////////////////////////");
 
-        AtomicInteger counter = new AtomicInteger();
-        Dictionary.dictionary.forEach((key, postingList) -> {
-            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + key);
-            else System.out.println(key);
-            for (String s : postingList) {
-                if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + "|---" + s);
-                else System.out.println("|---" + s);
-            }
-            counter.getAndIncrement();
-        });
 
-        System.out.println("//////////////////////////////");
-        System.out.println("//////////////////////////////");
-    }
-
-    public static void printDocumentList() {
-        System.out.println("\n******************************");
-        System.out.println("******* DOCUMENT LIST ********");
-
-        if (Dictionary.documentList == null || Dictionary.documentList.isEmpty()) {
-            System.out.println("The list is empty!");
-        } else {
-            for (String doc : Dictionary.documentList) {
-                System.out.println(doc);
-            }
+    public static ArrayList<String> getListOfTokenFromFile(String docPath) {
+        Scanner inputStream = null;
+        try {
+            inputStream = new Scanner(new File(docPath));
+        } catch (FileNotFoundException e) {
+            System.out.println("Document not found " + docPath);
+            System.exit(0);
         }
-        System.out.println("******************************");
+
+        ArrayList<String> tokenList = new ArrayList<>();
+        while (inputStream.hasNext()) {
+            String token = inputStream.next();
+            tokenList.add(token);
+        }
+        inputStream.close();
+        return tokenList;
     }
 }
