@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PostingList {
@@ -33,4 +34,13 @@ public class PostingList {
             System.out.println("|---" + docID + " " + listPosition);
         });
     }
+
+    public String[] getDocIDList() {
+        return postingList.keySet().toArray(new String[0]);
+    }
+
+    public Set<String> getDocIDListAsSet() {
+        return postingList.keySet();
+    }
+
 }
