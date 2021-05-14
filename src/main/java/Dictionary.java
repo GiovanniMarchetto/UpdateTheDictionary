@@ -63,8 +63,8 @@ public class Dictionary {
         AtomicInteger counter = new AtomicInteger();
         this.dictionary.forEach((term, postingList) -> {
 
-            if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + term);
-            else System.out.println(term);
+            if (counter.get() % 2 != 0) System.out.print("\t \t \t \t \t");
+            System.out.println(term);
 
             postingList.printPostingListForDictionary(counter);
 

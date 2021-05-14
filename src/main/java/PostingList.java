@@ -27,10 +27,10 @@ public class PostingList {
         return this.postingList.containsKey(docID);
     }
 
-    public void printPostingListForDictionary(AtomicInteger counter){
+    public void printPostingListForDictionary(AtomicInteger counter) {
         this.postingList.forEach((docID, listPosition) -> {
-                if (counter.get() % 2 != 0) System.out.println("\t \t \t \t \t" + "|---" + docID + listPosition);
-                else System.out.println("|---" + docID+ listPosition);
+            if (counter.get() % 2 != 0) System.out.print("\t \t \t \t \t");
+            System.out.println("|---" + docID + " " + listPosition);
         });
     }
 }
