@@ -2,9 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Miscellaneous {
+    public static final boolean DEBUG = false;
+
     private static final String[] SPECIAL_CHARACTERS = {".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}"};
 
     public static String getNormalizeToken(String token) {
@@ -20,7 +21,6 @@ public class Miscellaneous {
 
         return token;
     }
-
 
 
     public static ArrayList<String> getListOfTokenFromFile(String docPath) {
