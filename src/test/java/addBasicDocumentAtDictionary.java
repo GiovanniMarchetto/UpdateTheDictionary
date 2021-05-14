@@ -6,10 +6,15 @@ public class addBasicDocumentAtDictionary {
 
     @Test
     void add_doc_A() {
+        System.out.println("\n+++++++++++++++++++++++++++++   TEST-A   +++++++++++++++++++++++++++++");
+
         Dictionary dictionary = new Dictionary();
         String docPath = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "A.txt";
         dictionary.addDocumentAtDictionary(docPath);
-        assertEquals(1,dictionary.getDocumentList().size());
+        assertEquals(1, dictionary.getDocumentList().size());
+//        dictionary.printDictionary();
+
+        System.out.println("+++++++++++++++++++++++++++   END TEST-A   +++++++++++++++++++++++++++");
     }
 
 }
