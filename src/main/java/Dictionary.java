@@ -39,6 +39,12 @@ public class Dictionary {
         String docID = UUID.randomUUID().toString().substring(0, 8);
         this.documentList.add(docID);
 
+        if (Miscellaneous.DEBUG) {
+            System.out.println("\nAdd at the dictionary the document at path:");
+            System.out.println(docPath);
+            System.out.println("with the alias: " + docID);
+        }
+
         ArrayList<String> tokenList = Miscellaneous.getListOfTokenFromFile(docPath);
         int positionOfToken = 1;
 
@@ -56,9 +62,7 @@ public class Dictionary {
     }
 
     public void printDictionary() {
-        System.out.println("\n//////////////////////////////");
-        System.out.println("//////////DICTIONARY//////////");
-        System.out.println("//////////////////////////////");
+        System.out.println("\n//////////  DICTIONARY  //////////");
 
         AtomicInteger counter = new AtomicInteger();
         this.dictionary.forEach((term, postingList) -> {
@@ -71,13 +75,12 @@ public class Dictionary {
             counter.getAndIncrement();
         });
 
-        System.out.println("//////////////////////////////");
-        System.out.println("//////////////////////////////");
+        System.out.println("//////////////////////////////////");
+        System.out.println("//////////////////////////////////");
     }
 
     public void printDocumentList() {
-        System.out.println("\n******************************");
-        System.out.println("******* DOCUMENT LIST ********");
+        System.out.println("\n******* DOCUMENT LIST ********");
 
         if (this.documentList == null || this.documentList.isEmpty()) {
             System.out.println("The list is empty!");
@@ -89,4 +92,14 @@ public class Dictionary {
         System.out.println("******************************");
     }
 
+    public boolean containsTerm(String term) {
+        return dictionary.containsKey(term);
+    }
+
+    public PostingList getPostingList(String term) {
+        if (dictionary.containsKey(term)) {
+            return dictionary.get(term);
+        }
+        return new PostingList();
+    }
 }
