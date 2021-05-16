@@ -11,6 +11,14 @@ public class PostingList {
         postingList = new HashMap<>();
     }
 
+    public HashMap<String, ArrayList<Integer>> getPostingList() {
+        return postingList;
+    }
+
+    public void setPostingList(HashMap<String, ArrayList<Integer>> postingList) {
+        this.postingList = postingList;
+    }
+
     public void addPosting(String docID, int positionOfToken) {
         ArrayList<Integer> listPositions = new ArrayList<>();
         if (postingList.containsKey(docID)) {
@@ -28,6 +36,38 @@ public class PostingList {
         return this.postingList.containsKey(docID);
     }
 
+
+    public String[] getDocIDListAsArray() {
+        return postingList.keySet().toArray(new String[0]);
+    }
+
+    public Set<String> getDocIDListAsSet() {
+        return postingList.keySet();
+    }
+
+    public ArrayList<Integer> getListOfPositionOfDocID(String docID) {
+        return postingList.get(docID);
+    }
+
+    public boolean removePositionOfDocID(Integer positionToRemove, String docID) {
+        ArrayList<Integer> oldList = postingList.get(docID);
+        oldList.remove(positionToRemove);
+        if (oldList.isEmpty()) {
+            return removeDocID(docID);
+        }
+        postingList.replace(docID, oldList);
+        return true;
+    }
+
+    public boolean removeDocID(String docID) {
+        try {
+            postingList.remove(docID);
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return true;
+    }
+
     public void printPostingListForDictionary(AtomicInteger counter) {
         this.postingList.forEach((docID, listPosition) -> {
             if (counter.get() % 2 != 0) System.out.print("\t \t \t \t \t");
@@ -35,12 +75,10 @@ public class PostingList {
         });
     }
 
-    public String[] getDocIDList() {
-        return postingList.keySet().toArray(new String[0]);
-    }
-
-    public Set<String> getDocIDListAsSet() {
-        return postingList.keySet();
+    public void printPostingList() {
+        this.postingList.forEach((docID, listPosition) -> {
+            System.out.println("|---" + docID + " " + listPosition);
+        });
     }
 
 }
