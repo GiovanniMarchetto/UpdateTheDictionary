@@ -46,7 +46,7 @@ public class Dictionary {
         }
 
         ArrayList<String> tokenList = Miscellaneous.getListOfTokenFromFile(docPath);
-        int positionOfToken = 1;
+        AtomicInteger positionOfToken = new AtomicInteger(1);
 
         for (String token : tokenList) {
             token = Miscellaneous.getNormalizeToken(token);
@@ -55,10 +55,12 @@ public class Dictionary {
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
             }
-            postingList.addPosting(docID, positionOfToken);
+            postingList.addPosting(docID, positionOfToken.get());
             dictionary.put(token, postingList);
-            positionOfToken++;
+            positionOfToken.getAndIncrement();
         }
+
+        //TODO: trim the arrays of position of the posting of the document just added
     }
 
     public void printDictionary() {
@@ -67,7 +69,9 @@ public class Dictionary {
         AtomicInteger counter = new AtomicInteger();
         this.dictionary.forEach((term, postingList) -> {
 
-            if (counter.get() % 2 != 0) System.out.print("\t \t \t \t \t");
+            if (counter.get() % 2 != 0) {
+                System.out.print("\t \t \t \t \t");
+            }
             System.out.println(term);
 
             postingList.printPostingListForDictionary(counter);
