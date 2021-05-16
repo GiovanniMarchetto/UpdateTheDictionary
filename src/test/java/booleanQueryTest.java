@@ -58,7 +58,7 @@ public class booleanQueryTest {
         System.out.println("++++++++++++++++++++++++   END TEST-ADV-AND   ++++++++++++++++++++++++");
     }
 
-    private Dictionary dictionaryWithTestTextAB() {
+    public static Dictionary dictionaryWithTestTextAB() {
         Dictionary dictionary = new Dictionary();
 
         String docPathA = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "A.txt";
@@ -74,7 +74,7 @@ public class booleanQueryTest {
     }
 
 
-    private ArrayList<String> baseSelectionOfWords() {
+    public static ArrayList<String> baseSelectionOfWords() {
         ArrayList<String> words = new ArrayList<>();
         words.add("the");
         words.add("table");

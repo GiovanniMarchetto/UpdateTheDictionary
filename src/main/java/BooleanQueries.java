@@ -4,13 +4,16 @@ import java.util.Set;
 
 public class BooleanQueries {
 
+    public static ArrayList<String> queryTerm(Dictionary dictionary, String term) {
+        PostingList postingList = dictionary.getPostingList(term);
+        String[] docIDList = postingList.getDocIDListAsArray();
+        return new ArrayList<>(Arrays.asList(docIDList));
+    }
+
     public static ArrayList<String> queryAND(Dictionary dictionary, ArrayList<String> words) {
 
         // first word
-        String firstWord = words.get(0);
-        PostingList firstPostingList = dictionary.getPostingList(firstWord);
-        String[] firstDocIDList = firstPostingList.getDocIDList();
-        ArrayList<String> resultDocList = new ArrayList<>(Arrays.asList(firstDocIDList));
+        ArrayList<String> resultDocList = queryTerm(dictionary,words.get(0));
 
         for (String word : words) {
             if (resultDocList.isEmpty()) {
@@ -33,7 +36,7 @@ public class BooleanQueries {
                 continue;
             }
             PostingList postingList = dictionary.getPostingList(word);
-            String[] docIDList = postingList.getDocIDList();
+            String[] docIDList = postingList.getDocIDListAsArray();
             for (String docId : docIDList) {
                 if (!resultDocList.contains(docId)) {
                     resultDocList.add(docId);
@@ -49,7 +52,7 @@ public class BooleanQueries {
         for (String word : words) {
             if (dictionary.containsTerm(word)) {
                 PostingList postingList = dictionary.getPostingList(word);
-                String[] docIDList = postingList.getDocIDList();
+                String[] docIDList = postingList.getDocIDListAsArray();
                 for (String docID : docIDList) {
                     resultDocList.remove(docID);
                 }
@@ -57,4 +60,6 @@ public class BooleanQueries {
         }
         return resultDocList;
     }
+
+
 }
