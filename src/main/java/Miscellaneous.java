@@ -25,12 +25,13 @@ public class Miscellaneous {
 
 
     public static ArrayList<String> getListOfTokenFromFile(String docPath) { // alias tokenization
-        Scanner inputStream = null;
+        Scanner inputStream;
         try {
             inputStream = new Scanner(new File(docPath));
         } catch (FileNotFoundException e) {
             System.out.println("Document not found " + docPath);
-            System.exit(0);
+            return null;
+//            System.exit(0);
         }
 
         ArrayList<String> tokenList = new ArrayList<>();
