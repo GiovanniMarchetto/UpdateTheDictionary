@@ -20,7 +20,7 @@ public class phrasalQueryTest {
 
 //        dictionary.printDictionary();
 //        System.out.println("\n\n\n");
-        answer.printPostingList();
+//        answer.printPostingList();
 //        System.out.println("\n\n\n");
 //        dictionary.printDictionary();
 

@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Dictionary {
@@ -30,7 +28,7 @@ public class Dictionary {
         this.documentList = documentList;
     }
 
-    public void addDocumentAtDictionary(String docPath) {
+    public String addDocumentAtDictionary(String docPath) {
         /*        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
         // WARNING: if we add too document it can explode
         //        while (this.documentList.contains(docID)) {
@@ -60,7 +58,29 @@ public class Dictionary {
             positionOfToken.getAndIncrement();
         }
 
+        return docID;
         //TODO: trim the arrays of position of the posting of the document just added
+    }
+
+    public String removeDocumentFromDictionary(String docID) {
+        try {
+            if (!documentList.contains(docID)) {
+                throw new Exception("Document ID input not valid");
+            }
+            Set<String> termList = new HashSet<>(dictionary.keySet());
+            for (String term : termList) {
+                PostingList termPostingList = dictionary.get(term);
+                termPostingList.removeDocID(docID);
+                if (termPostingList.size() == 0){
+                    dictionary.remove(term);
+                }
+            }
+            documentList.remove(docID);
+            return docID;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "";
+        }
     }
 
     public void printDictionary() {
