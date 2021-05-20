@@ -1,0 +1,2 @@
+C:\Users\march\Documents\GitHub\UpdateTheDictionary\src\test\resources\A.txt
+C:\Users\march\Documents\GitHub\UpdateTheDictionary\src\test\resources\B.txt

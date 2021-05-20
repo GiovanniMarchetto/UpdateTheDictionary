@@ -45,4 +45,15 @@ public class basicDictionaryTest {
 
     }
 
+    @Test
+    void add_doc_list() {
+        Miscellaneous.testTitleFormatting("TEST-LIST");
+
+        Dictionary dictionary = new Dictionary();
+        String listPath = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "listOfDocs.txt";
+        dictionary.addDocumentsFromListAtDictionary(listPath);
+        assertEquals(2, dictionary.getDocumentList().size());
+        dictionary.printDictionary();
+    }
+
 }

@@ -20,7 +20,6 @@ public class Miscellaneous {
     public static String getNormalizeToken(String token) {
         token = token.toLowerCase();
         //TODO: plural? stop word?
-        token = token.toLowerCase();
         for (String suffix : SPECIAL_CHARACTERS) {
             if (token.startsWith(suffix)) {
                 token = token.substring(1);
@@ -58,6 +57,24 @@ public class Miscellaneous {
         }
         inputStream.close();
         return tokenList;
+    }
+
+    public static ArrayList<String> getListOfLines(String listPath) {
+        Scanner inputStream;
+        try {
+            inputStream = new Scanner(new File(listPath));
+        } catch (FileNotFoundException e) {
+            System.out.println("List of document not found " + listPath);
+            return null;
+        }
+
+        ArrayList<String> listDocuments = new ArrayList<>();
+        while (inputStream.hasNextLine()) {
+            String token = inputStream.nextLine();
+            listDocuments.add(token);
+        }
+        inputStream.close();
+        return listDocuments;
     }
 
     public static void testTitleFormatting(String title) {

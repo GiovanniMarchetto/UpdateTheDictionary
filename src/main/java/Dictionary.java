@@ -28,6 +28,17 @@ public class Dictionary {
         this.documentList = documentList;
     }
 
+    public ArrayList<String> addDocumentsFromListAtDictionary(String listPath) {
+        ArrayList<String> documentsPathList = Miscellaneous.getListOfLines(listPath);
+        ArrayList<String> docIDList = new ArrayList<>();
+        if (documentsPathList != null) {
+            for (String docPath : documentsPathList) {
+                docIDList.add(addDocumentAtDictionary(docPath));
+            }
+        }
+        return docIDList;
+    }
+
     public String addDocumentAtDictionary(String docPath) {
         /*        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
         // WARNING: if we add too document it can explode
@@ -76,7 +87,7 @@ public class Dictionary {
             for (String term : termList) {
                 PostingList termPostingList = dictionary.get(term);
                 termPostingList.removeDocID(docID);
-                if (termPostingList.size() == 0){
+                if (termPostingList.size() == 0) {
                     dictionary.remove(term);
                 }
             }
