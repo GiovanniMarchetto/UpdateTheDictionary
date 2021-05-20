@@ -1,10 +1,15 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class phrasalQueryTest {
+
+    private ArrayList<String> getTokenListFromPhrase(String phrase){
+        return new ArrayList<>(Arrays.asList(phrase.split(" ")));
+    }
 
     @Test
     void twoWordPhraseQuery() {
@@ -12,7 +17,7 @@ public class phrasalQueryTest {
 
         Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
 
-        ArrayList<String> words = booleanQueryTest.baseSelectionOfWords();
+        ArrayList<String> words = getTokenListFromPhrase("the table");
 
         PostingList answer = PhrasalQueries.phrasalQuery(dictionary, words);
 
