@@ -1,3 +1,5 @@
+import Misc.SortBySize;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -11,7 +13,7 @@ public class BooleanQueries {
     }
 
     public static ArrayList<String> queryAND(Dictionary dictionary, ArrayList<String> words) {
-
+        words.sort(new SortBySize()); // bigger-->less documents should contain it
         // first word
         ArrayList<String> resultDocList = queryTerm(dictionary,words.get(0));
 
