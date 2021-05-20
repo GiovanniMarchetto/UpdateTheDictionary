@@ -44,14 +44,16 @@ public class Dictionary {
         }
 
         ArrayList<String> tokenList = Miscellaneous.getListOfTokenFromFile(docPath);
-        if (tokenList==null){
+        if (tokenList == null) {
             return "";
         }
         AtomicInteger positionOfToken = new AtomicInteger(1);
 
         for (String token : tokenList) {
             token = Miscellaneous.getNormalizeToken(token);
-
+            if (token.equals("")) {
+                continue;
+            }
             PostingList postingList = new PostingList();
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
