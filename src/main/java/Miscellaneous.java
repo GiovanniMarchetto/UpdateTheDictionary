@@ -42,4 +42,14 @@ public class Miscellaneous {
         inputStream.close();
         return tokenList;
     }
+
+    public static void testTitleFormatting(String title) {
+        int maxWidth = 70;
+        int titleWidth = title.length();
+        int afterIndex = (maxWidth - titleWidth) / 2;
+        int beforeIndex = maxWidth - titleWidth - afterIndex;
+        String separator = "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+
+        System.out.printf("%s   %s   %s%n", separator.substring(0, beforeIndex), title, separator.substring(0, afterIndex));
+    }
 }
