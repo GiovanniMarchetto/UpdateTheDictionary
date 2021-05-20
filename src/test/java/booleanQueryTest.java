@@ -23,7 +23,7 @@ public class booleanQueryTest {
 
     public static ArrayList<String> baseSelectionOfWords() {
         ArrayList<String> words = new ArrayList<>();
-        words.add("the");
+        words.add("cat");
         words.add("table");
         return words;
     }

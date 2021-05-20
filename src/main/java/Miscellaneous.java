@@ -6,9 +6,19 @@ import java.util.Scanner;
 public class Miscellaneous {
     public static final boolean DEBUG = false;
 
-    private static final String[] SPECIAL_CHARACTERS = {".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}"};
+    private static final String[] SPECIAL_CHARACTERS = {
+            ".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}",
+            "'", "\""
+    };
+
+    private static final String[] STOP_WORDS = {
+            "the", "and", "or", "a", "an",
+            "i", "you", "he", "she", "it", "we", "they",
+            "is", "are"
+    };
 
     public static String getNormalizeToken(String token) {
+        token = token.toLowerCase();
         //TODO: plural? stop word?
         token = token.toLowerCase();
         for (String suffix : SPECIAL_CHARACTERS) {
@@ -21,6 +31,13 @@ public class Miscellaneous {
         }
 
         return token;
+    }
+
+    public static ArrayList<String> removeStopWords(ArrayList<String> list){
+        for (String stopWord : STOP_WORDS) {
+            list.remove(stopWord);
+        }
+        return list;
     }
 
 
