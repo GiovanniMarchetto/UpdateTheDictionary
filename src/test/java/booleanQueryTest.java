@@ -6,58 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class booleanQueryTest {
 
-    @Test
-    void baseAND() {
-        System.out.println("\n++++++++++++++++++++++++++   TEST-BASE-AND   +++++++++++++++++++++++++");
-
-        Dictionary dictionary = dictionaryWithTestTextAB();
-
-        ArrayList<String> words = baseSelectionOfWords();
-
-        assertEquals(1, BooleanQueries.queryAND(dictionary, words).size());
-
-        System.out.println("++++++++++++++++++++++++   END TEST-BASE-AND   +++++++++++++++++++++++");
-    }
-
-    @Test
-    void baseOR() {
-        System.out.println("\n++++++++++++++++++++++++++   TEST-BASE-OR   ++++++++++++++++++++++++++");
-
-        Dictionary dictionary = dictionaryWithTestTextAB();
-
-        ArrayList<String> words = baseSelectionOfWords();
-
-        assertEquals(2, BooleanQueries.queryOR(dictionary, words).size());
-
-        System.out.println("++++++++++++++++++++++++   END TEST-BASE-OR   ++++++++++++++++++++++++");
-    }
-
-    @Test
-    void baseNOT() {
-        System.out.println("\n++++++++++++++++++++++++++   TEST-BASE-NOT   +++++++++++++++++++++++++");
-
-        Dictionary dictionary = dictionaryWithTestTextAB();
-
-        ArrayList<String> words = baseSelectionOfWords();
-
-        assertEquals(0, BooleanQueries.queryNOT(dictionary, words).size());
-
-        System.out.println("++++++++++++++++++++++++   END TEST-BASE-NOT   +++++++++++++++++++++++");
-    }
-
-    @Test
-    void advAND() {
-        System.out.println("\n++++++++++++++++++++++++++   TEST-ADV-AND   ++++++++++++++++++++++++++");
-
-        Dictionary dictionary = dictionaryWithTestTextAB();
-
-        ArrayList<String> words = advSelectionOfWords();
-
-        assertEquals(0, BooleanQueries.queryAND(dictionary, words).size());
-
-        System.out.println("++++++++++++++++++++++++   END TEST-ADV-AND   ++++++++++++++++++++++++");
-    }
-
     public static Dictionary dictionaryWithTestTextAB() {
         Dictionary dictionary = new Dictionary();
 
@@ -73,12 +21,58 @@ public class booleanQueryTest {
         return dictionary;
     }
 
-
     public static ArrayList<String> baseSelectionOfWords() {
         ArrayList<String> words = new ArrayList<>();
         words.add("the");
         words.add("table");
         return words;
+    }
+
+    @Test
+    void baseAND() {
+        Miscellaneous.testTitleFormatting("TEST-BASE-AND");
+
+        Dictionary dictionary = dictionaryWithTestTextAB();
+
+        ArrayList<String> words = baseSelectionOfWords();
+
+        assertEquals(1, BooleanQueries.queryAND(dictionary, words).size());
+    }
+
+    @Test
+    void baseOR() {
+        Miscellaneous.testTitleFormatting("TEST-BASE-OR");
+
+        Dictionary dictionary = dictionaryWithTestTextAB();
+
+        ArrayList<String> words = baseSelectionOfWords();
+
+        assertEquals(2, BooleanQueries.queryOR(dictionary, words).size());
+
+    }
+
+    @Test
+    void baseNOT() {
+        Miscellaneous.testTitleFormatting("TEST-BASE-NOT");
+
+        Dictionary dictionary = dictionaryWithTestTextAB();
+
+        ArrayList<String> words = baseSelectionOfWords();
+
+        assertEquals(0, BooleanQueries.queryNOT(dictionary, words).size());
+
+    }
+
+    @Test
+    void advAND() {
+        Miscellaneous.testTitleFormatting("TEST-ADV-AND");
+
+        Dictionary dictionary = dictionaryWithTestTextAB();
+
+        ArrayList<String> words = advSelectionOfWords();
+
+        assertEquals(0, BooleanQueries.queryAND(dictionary, words).size());
+
     }
 
     private ArrayList<String> advSelectionOfWords() {

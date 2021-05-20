@@ -8,7 +8,7 @@ public class phrasalQueryTest {
 
     @Test
     void twoWordPhraseQuery() {
-        System.out.println("\n++++++++++++++++++++++++++   TEST-PHQ-TWO   ++++++++++++++++++++++++++");
+        Miscellaneous.testTitleFormatting("TEST-PHQ-TWO");
 
         Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
 
@@ -24,7 +24,6 @@ public class phrasalQueryTest {
 //        System.out.println("\n\n\n");
 //        dictionary.printDictionary();
 
-        System.out.println("++++++++++++++++++++++++   END TEST-PHQ-TWO   ++++++++++++++++++++++++");
     }
 
 }
