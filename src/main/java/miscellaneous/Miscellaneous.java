@@ -19,6 +19,12 @@ public class Miscellaneous {
             "is", "are"
     };
 
+    public static void doNormalizationOnArrayListOfString(ArrayList<String> stringArrayList){
+        for (int i = 0, stringArrayListSize = stringArrayList.size(); i < stringArrayListSize; i++) {
+            stringArrayList.set(i,getNormalizeToken(stringArrayList.get(i)));
+        }
+    }
+
     public static String getNormalizeToken(String token) {
         token = token.toLowerCase();// no distinction of names
         //TODO: plural? stop word?
