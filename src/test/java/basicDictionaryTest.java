@@ -54,8 +54,8 @@ public class basicDictionaryTest {
         Dictionary dictionary = new Dictionary();
         String listPath = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "listOfDocs.txt";
         dictionary.addDocumentsFromListAtDictionary(listPath);
-        assertEquals(2, dictionary.getDocumentList().size());
-        dictionary.printDictionary();
+        assertEquals(3, dictionary.getDocumentList().size());
+//        dictionary.printDictionary();
     }
 
 }

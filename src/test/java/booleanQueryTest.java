@@ -24,6 +24,12 @@ public class booleanQueryTest {
         return dictionary;
     }
 
+    public static Dictionary dictionaryWithTestTextABC() {
+        Dictionary dictionary = new Dictionary();
+        dictionary.addDocumentsFromListAtDictionary(System.getProperty("user.dir") + "\\src\\test\\resources\\" + "listOfDocs.txt");
+        return dictionary;
+    }
+
     public static ArrayList<String> baseSelectionOfWords() {
         ArrayList<String> words = new ArrayList<>();
         words.add("cat");
