@@ -12,7 +12,10 @@ public class normalizationTest {
 
     @Test
     void catM() {
-        assertEquals("cat", Miscellaneous.getNormalizeToken("CAT"));
+        String w = "CAT";
+        String w2 = Miscellaneous.getNormalizeToken(w);
+        assertEquals("cat",w2 );
+//        System.out.println(w+" ----  "+w2);
     }
 
     @Test

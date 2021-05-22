@@ -30,6 +30,16 @@ public class PostingList {
         this.postingList.put(docID, listPositions);
     }
 
+    public void addPosting(String docID, ArrayList<Integer> listPositionsToAdd) {
+        ArrayList<Integer> listPositions = new ArrayList<>();
+        if (postingList.containsKey(docID)) {
+            listPositions = postingList.get(docID);
+        }
+        listPositions.addAll(listPositionsToAdd);
+        listPositions.sort(Integer::compareTo);
+        this.postingList.put(docID, listPositions);
+    }
+
     public int size() {
         return this.postingList.size();
     }
