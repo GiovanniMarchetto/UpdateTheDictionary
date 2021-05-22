@@ -1,3 +1,6 @@
+import dataStructure.Dictionary;
+import operations.BooleanQueries;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;

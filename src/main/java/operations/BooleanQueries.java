@@ -1,4 +1,8 @@
-import Misc.SortBySize;
+package operations;
+
+import dataStructure.Dictionary;
+import dataStructure.PostingList;
+import miscellaneous.SortBySize;
 
 import java.util.ArrayList;
 import java.util.Arrays;

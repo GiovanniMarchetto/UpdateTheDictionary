@@ -1,23 +1,28 @@
+package operations;
+
+import dataStructure.Dictionary;
+import dataStructure.PostingList;
+
 import java.util.ArrayList;
 import java.util.Set;
 
 public class PhrasalQueries {
 
-    public static PostingList phrasalQuery(Dictionary dictionary, ArrayList<String> words) {
+    public static PostingList phrasalQuery(Dictionary dictionary, ArrayList<String> phrase) {
 
-        String firstWord = words.get(0);
+        String firstWord = phrase.get(0);
         PostingList antePostingList = dictionary.getPostingList(firstWord);
 
         // Suppose that is ordered
-        for (int i = 1, wordsSize = words.size(); i < wordsSize; i++) {
-            PostingList postPostingList = dictionary.getPostingList(words.get(i));
+        for (int i = 1, wordsSize = phrase.size(); i < wordsSize; i++) {
+            PostingList postPostingList = dictionary.getPostingList(phrase.get(i));
             antePostingList = searchPQ(antePostingList, postPostingList);
         }
 
         // Build the final answer with the start of the phrase
         PostingList firstPostingList = dictionary.getPostingList(firstWord);
         PostingList answerPostingList = new PostingList();
-        int totalWords = words.size();
+        int totalWords = phrase.size();
         for (String docID : firstPostingList.getDocIDListAsSet()) {
 
             if (antePostingList.getDocIDListAsSet().contains(docID)) {

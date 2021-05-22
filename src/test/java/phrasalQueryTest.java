@@ -1,3 +1,7 @@
+import dataStructure.Dictionary;
+import dataStructure.PostingList;
+import miscellaneous.Miscellaneous;
+import operations.PhrasalQueries;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,3 +1,5 @@
+package miscellaneous;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -18,8 +20,10 @@ public class Miscellaneous {
     };
 
     public static String getNormalizeToken(String token) {
-        token = token.toLowerCase();
+        token = token.toLowerCase();// no distinction of names
         //TODO: plural? stop word?
+
+        //TODO: special character also in the middle of the words? and 's.. ecc
         for (String suffix : SPECIAL_CHARACTERS) {
             if (token.startsWith(suffix)) {
                 token = token.substring(1);
