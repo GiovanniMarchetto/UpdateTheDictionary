@@ -27,9 +27,9 @@ public class PhrasalQueries {
         PostingList firstPostingList = dictionary.getPostingList(firstWord);
         PostingList answerPostingList = new PostingList();
         int totalWords = phrase.size();
-        for (String docID : firstPostingList.getDocIDListAsSet()) {
+        for (String docID : antePostingList.getDocIDListAsSet()) {
 
-            if (antePostingList.getDocIDListAsSet().contains(docID)) {
+            if (firstPostingList.getDocIDListAsSet().contains(docID)) {
 
                 ArrayList<Integer> anteListOfPosition = antePostingList.getListOfPositionOfDocID(docID);
                 int anteLastPosition = anteListOfPosition.get(anteListOfPosition.size() - 1);
@@ -94,7 +94,22 @@ public class PhrasalQueries {
         return resultPostingList;
     }
 
-    public static PostingList quickPhraseQuery(Dictionary dictionary, String phraseString) {
+    /*
+    *   The idea is to speed up the search for longer phrases.
+    *   To do this, we tried to filter the documents first
+    *       based on the longest and therefore theoretically rarest words.
+    *   In addition, to speed up this alternative search method,
+    *       a weaker search was made, i.e. removing the stop words,
+    *       but maintaining the positioning of the word
+    *      So the possible error is to false positive like:
+    *          phrase: "the cat is on the table"
+    *          false positive: "the cat is at a table"
+    *   In any case, the various tests have confirmed that searching
+    *       with the classic method (with words in order and
+    *       without previous filtering) is more efficient
+    *       even on long sentences.
+    * */
+    public static PostingList alternativePhrasalQuery(Dictionary dictionary, String phraseString) {
 
         ArrayList<String> phrase = getTokenListFromPhrase(phraseString);
 
@@ -106,28 +121,51 @@ public class PhrasalQueries {
 
         ArrayList<String> baseDocumentList = BooleanQueries.queryAND(dictionary, phraseTemp);
         String firstWord = phrase.get(0);
-        PostingList antePostingList = queryANDPostingListWithDocumentList(dictionary.getPostingList(firstWord), baseDocumentList);
+        String firstWordTemp = phraseTemp.get(0);
+        PostingList antePostingList = queryANDPostingListWithDocumentList(dictionary.getPostingList(firstWordTemp), baseDocumentList);
 
-        // Suppose that is ordered
-        for (int i = 1; i < phrase.size(); i++) {
-            PostingList postPostingList = dictionary.getPostingList(phrase.get(i));
-            antePostingList = matchingPostingListOfNextWord(antePostingList, postPostingList);
+        for (int i = 1; i < phraseTemp.size(); i++) {
+            PostingList postPostingList = dictionary.getPostingList(phraseTemp.get(i));
+            PostingList finalPostingList = new PostingList();
+
+            Set<String> docIDListAnte = antePostingList.getDocIDListAsSet();
+            Set<String> docIDListPost = postPostingList.getDocIDListAsSet();
+
+            for (String docID : docIDListAnte) {
+                if (docIDListPost.contains(docID)) {
+                    ArrayList<Integer> listOfPositionAnte = antePostingList.getListOfPositionOfDocID(docID);
+                    ArrayList<Integer> listOfPositionPost = postPostingList.getListOfPositionOfDocID(docID);
+                    int lastPostPosition = listOfPositionPost.get(listOfPositionPost.size() - 1);
+
+                    for (int position : listOfPositionAnte) {
+                        int postPosition = position + (phrase.indexOf(phraseTemp.get(i))-phrase.indexOf(phraseTemp.get(i-1)));
+                        if (postPosition > lastPostPosition) {
+                            break;
+                        }
+                        if (listOfPositionPost.contains(postPosition)) {
+                            finalPostingList.addPosting(docID, postPosition);
+                        }
+                    }
+                }
+            }
+
+            antePostingList = finalPostingList;
         }
 
         // Build the final answer with the start of the phrase
         PostingList firstPostingList = dictionary.getPostingList(firstWord);
         PostingList answerPostingList = new PostingList();
-        int totalWords = phrase.size();
-        for (String docID : firstPostingList.getDocIDListAsSet()) {
+        int positionOfWordOfAntePostingList = phrase.indexOf(phraseTemp.get(phraseTemp.size()-1));
+        for (String docID : antePostingList.getDocIDListAsSet()) {
 
-            if (antePostingList.getDocIDListAsSet().contains(docID)) {
+            if (firstPostingList.getDocIDListAsSet().contains(docID)) {
 
                 ArrayList<Integer> anteListOfPosition = antePostingList.getListOfPositionOfDocID(docID);
                 int anteLastPosition = anteListOfPosition.get(anteListOfPosition.size() - 1);
 
                 for (int startPosition : firstPostingList.getListOfPositionOfDocID(docID)) {
 
-                    int endPosition = startPosition + totalWords - 1;
+                    int endPosition = startPosition + positionOfWordOfAntePostingList;
 
                     if (endPosition > anteLastPosition) {
                         break;

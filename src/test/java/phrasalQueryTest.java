@@ -47,38 +47,71 @@ public class phrasalQueryTest {
     }
 
     @Test
-    void longTimePQ() {
-        Miscellaneous.testTitleFormatting("longTimePQ");
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextABC();
-
-        long startTime = System.nanoTime();
-        PostingList answer1 = PhrasalQueries.phrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
-        assertEquals(1, answer1.size());
-        long endTime = System.nanoTime();
-        System.out.println("Total time for normal phrase query: " + (endTime - startTime));
-    }
-
-
-    @Test
     void shortTimePQ2() {
         Miscellaneous.testTitleFormatting("shortTimePQ2");
         Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
         long startTime = System.nanoTime();
-        PostingList answer2 = PhrasalQueries.quickPhraseQuery(dictionary, "the table");
+        PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "the table");
         assertEquals(1, answer2.size());
         long endTime = System.nanoTime();
         System.out.println("Total time for quick phrase query:  " + (endTime - startTime));
     }
 
+
     @Test
-    void longTimePQ2() {
-        Miscellaneous.testTitleFormatting("longTimePQ2");
+    void longTimePQ() {Miscellaneous.testTitleFormatting("longTimePQ");
+
+
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used Memory before: " + usedMemoryBefore);
+
+
+
+
         Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextABC();
         long startTime = System.nanoTime();
-        PostingList answer2 = PhrasalQueries.quickPhraseQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
-        assertEquals(1, answer2.size());
+        for (int i = 0; i < 10; i++) {
+            PostingList answer1 = PhrasalQueries.phrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
+            assertEquals(1, answer1.size());
+        }
         long endTime = System.nanoTime();
-        System.out.println("Total time for quick phrase query:  " + (endTime - startTime));
+        System.out.println("Time 10 repetitions: " + (endTime - startTime));
+
+
+
+
+        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Memory increased:   " + (usedMemoryAfter-usedMemoryBefore));
+
+
+
+    }
+
+    @Test
+    void longTimePQ2() {Miscellaneous.testTitleFormatting("longTimePQ2");
+
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used Memory before: " + usedMemoryBefore);
+
+
+
+
+        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextABC();
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 10; i++) {
+            PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
+            assertEquals(1, answer2.size());
+        }
+        long endTime = System.nanoTime();
+        System.out.println("Time 10 repetitions:  " + (endTime - startTime));
+
+
+
+        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Memory increased:   " + (usedMemoryAfter-usedMemoryBefore));
+
     }
 
 }
