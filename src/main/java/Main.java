@@ -64,6 +64,7 @@ public class Main {
                         System.out.println("\t" + docID);
                     }
                 }
+                //TODO: add boolean query and phrasal query
                 case "p" -> dictionary.printDictionary();
                 case "d" -> dictionary.printDocumentList();
                 case "q" -> {

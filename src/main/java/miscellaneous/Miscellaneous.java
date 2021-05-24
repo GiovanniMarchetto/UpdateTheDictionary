@@ -2,8 +2,7 @@ package miscellaneous;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Miscellaneous {
     public static final boolean DEBUG = false;
@@ -16,8 +15,11 @@ public class Miscellaneous {
     private static final String[] STOP_WORDS = {
             "the", "and", "or", "a", "an",
             "i", "you", "he", "she", "it", "we", "they",
-            "is", "are"
+            "is", "are",
+            "to","on"
     };
+
+    private static final List<String> STOP_WORDS_LIST = Arrays.asList(STOP_WORDS);
 
     public static void doNormalizationOnArrayListOfString(ArrayList<String> stringArrayList){
         for (int i = 0, stringArrayListSize = stringArrayList.size(); i < stringArrayListSize; i++) {
@@ -42,11 +44,8 @@ public class Miscellaneous {
         return token;
     }
 
-    public static ArrayList<String> removeStopWords(ArrayList<String> list){
-        for (String stopWord : STOP_WORDS) {
-            list.remove(stopWord);
-        }
-        return list;
+    public static void removeStopWords(ArrayList<String> list){
+        list.removeIf(STOP_WORDS_LIST::contains);
     }
 
 
