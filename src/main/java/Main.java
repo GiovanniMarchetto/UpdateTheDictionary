@@ -1,5 +1,6 @@
 import dataStructure.Dictionary;
 import operations.BooleanQueries;
+import operations.PhrasalQueries;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,22 +15,15 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         String input;
         AtomicBoolean continueOperation = new AtomicBoolean(true);
+
+        printCommandPalette();
+
         while (continueOperation.get()) {
 
-            System.out.println("\n-------------------- Command palette --------------------");
-            System.out.println("a - to add a document (must insert the correct path of the txt to add)");
-            System.out.println("l - to add a list of document (path of the file that contain the list)");
-            System.out.println("r - to remove a document");
-            System.out.println("t - to search a term in the dictionary");
-            System.out.println("p - to print the dictionary");
-            System.out.println("d - to print the list of document");
-            System.out.println("q - to exit the program");
-            System.out.println("\n---------------------------------------------------------");
-
-            System.out.print("Command: ");
+            System.out.print("\nCommand: ");
             input = keyboard.nextLine();
             switch (input) {
-                case "a" -> {
+                case "add" -> {
                     System.out.println("Path of the document to add at the dictionary:");
                     input = keyboard.nextLine();
                     String newDocID = dictionary.addDocumentAtDictionary(input);
@@ -37,7 +31,7 @@ public class Main {
                         System.out.println("The docID " + newDocID + " has been successfully added");
                     }
                 }
-                case "l" -> {
+                case "addList" -> {
                     System.out.println("Path of the document that contain the list of documents to add at the dictionary:");
                     input = keyboard.nextLine();
                     ArrayList<String> listDocID = dictionary.addDocumentsFromListAtDictionary(input);
@@ -55,26 +49,87 @@ public class Main {
                         System.out.println("The docID " + removeDocID + " has been successfully removed");
                     }
                 }
-                case "t" -> {
+
+
+                case "term" -> {
                     System.out.println("Which term do you want to search in the dictionary?");
                     input = keyboard.nextLine();
                     ArrayList<String> listOfDocID = BooleanQueries.queryTerm(dictionary, input);
-                    System.out.println("The document that contains the term are:");
-                    for (String docID : listOfDocID) {
-                        System.out.println("\t" + docID);
-                    }
+                    printResultDocumentList(listOfDocID);
                 }
-                //TODO: add boolean query and phrasal query
-                case "p" -> dictionary.printDictionary();
-                case "d" -> dictionary.printDocumentList();
-                case "q" -> {
+                //TODO: add phrasal query
+
+
+
+                case "bool-AND" -> {
+                    System.out.println("Which terms do you want in AND query (space between words)?");
+                    input = keyboard.nextLine();
+                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
+                    ArrayList<String> listOfDocID = BooleanQueries.queryAND(dictionary, listOfToken);
+                    printResultDocumentList(listOfDocID);
+                }
+                case "bool-OR" -> {
+                    System.out.println("Which terms do you want in OR query (space between words)?");
+                    input = keyboard.nextLine();
+                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
+                    ArrayList<String> listOfDocID = BooleanQueries.queryOR(dictionary, listOfToken);
+                    printResultDocumentList(listOfDocID);
+                }
+                case "bool-NOT" -> {
+                    System.out.println("Which terms do you want in NOT query (space between words)?");
+                    input = keyboard.nextLine();
+                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
+                    ArrayList<String> listOfDocID = BooleanQueries.queryNOT(dictionary, listOfToken);
+                    printResultDocumentList(listOfDocID);
+                }
+
+
+                case "dict" -> dictionary.printDictionary();
+                case "dictList" -> dictionary.printDocumentList();
+
+
+                case "help" -> printCommandPalette();
+                case "quit" -> {
                     System.out.println("### Exit ###");
                     continueOperation.set(false);
                 }
+
+
                 default -> System.out.println("Invalid input");
             }
         }
         keyboard.close();
+    }
+
+    private static void printResultDocumentList(ArrayList<String> listOfDocID) {
+        System.out.println("The result document list is:");
+        for (String docID : listOfDocID) {
+            System.out.println("\t" + docID);
+        }
+    }
+
+    public static void printCommandPalette(){
+        System.out.println("\n-------------------- Command palette --------------------");
+        System.out.println("add - to add a document (must insert the correct path of the txt to add)");
+        System.out.println("addList - to add a list of document (path of the file that contain the list)");
+        System.out.println("rmv - to remove a document");
+
+        System.out.println("");
+        System.out.println("term - to search a term in the dictionary");
+
+        System.out.println("");
+        System.out.println("bool-AND - to do AND boolean query on the dictionary");
+        System.out.println("bool-OR - to do AND boolean query on the dictionary");
+        System.out.println("bool-NOT - to do AND boolean query on the dictionary");
+
+        System.out.println("");
+        System.out.println("dict - to print the dictionary");
+        System.out.println("dictList - to print the list of document");
+
+        System.out.println("");
+        System.out.println("help - to print the command palette");
+        System.out.println("quit - to exit the program");
+        System.out.println("\n---------------------------------------------------------");
     }
 
 }
