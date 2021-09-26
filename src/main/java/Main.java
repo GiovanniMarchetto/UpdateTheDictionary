@@ -1,8 +1,10 @@
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
+import miscellaneous.SaveReadPersistentDictionary;
 import operations.BooleanQueries;
 import operations.PhrasalQueries;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -12,10 +14,40 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("\nWelcome to the updating dictionary project.");
 
+        SaveReadPersistentDictionary xd = new SaveReadPersistentDictionary();
+
         Dictionary dictionary = new Dictionary();
         Scanner keyboard = new Scanner(System.in);
         String input;
         AtomicBoolean continueOperation = new AtomicBoolean(true);
+
+        while (continueOperation.get()) {
+            System.out.println("\nDo you want to load the previous dictionary? (y/n)");
+            continueOperation.set(false);
+            input = keyboard.nextLine();
+            switch (input) {
+                case "y" -> {
+                    try {
+                        Dictionary persistentDictionary = xd.readFile();
+                        dictionary.setDictionary(persistentDictionary.getDictionary());
+                        System.out.println("Dictionary loaded");
+                    } catch (Exception e) {
+                        System.out.println("Error during load of persistent dictionary... (new dictionary created)");
+                        System.out.println(e.getMessage());
+                    }
+                }
+                case "n" -> {
+                    System.out.println("New dictionary created.");
+                }
+                default -> {
+                    System.out.println("Wrong command.");
+                    continueOperation.set(true);
+                }
+            }
+        }
+
+        continueOperation.set(true);
+
 
         printCommandPalette();
 
@@ -103,6 +135,16 @@ public class Main {
             }
         }
         keyboard.close();
+
+        System.out.println("### Save dictionary ###");
+        try {
+            xd.saveFile(dictionary);
+            System.out.println("### Dictionary saved successfully ###");
+        } catch (Exception e) {
+            System.out.println("!!! ERROR DICTIONARY NOT SAVED !!!");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("### End Program ###");
     }
 
     private static void printResultDocumentList(ArrayList<String> listOfDocID) {
@@ -112,7 +154,7 @@ public class Main {
         }
     }
 
-    public static void printCommandPalette(){
+    public static void printCommandPalette() {
         System.out.println("\n-------------------- Command palette --------------------");
         System.out.println("add - to add a document (must insert the correct path of the txt to add)");
         System.out.println("addList - to add a list of document (path of the file that contain the list)");

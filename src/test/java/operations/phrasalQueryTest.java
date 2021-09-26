@@ -1,7 +1,8 @@
+package operations;
+
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
 import miscellaneous.Miscellaneous;
-import operations.PhrasalQueries;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

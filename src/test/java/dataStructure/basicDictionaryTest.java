@@ -1,3 +1,5 @@
+package dataStructure;
+
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;
 import org.junit.jupiter.api.Test;

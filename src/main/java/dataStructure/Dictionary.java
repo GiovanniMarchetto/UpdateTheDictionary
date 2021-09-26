@@ -2,10 +2,11 @@ package dataStructure;
 
 import miscellaneous.Miscellaneous;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Dictionary {
+public class Dictionary implements Serializable {
 
     private HashMap<String, PostingList> dictionary;
 

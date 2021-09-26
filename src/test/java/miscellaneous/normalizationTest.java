@@ -1,3 +1,5 @@
+package miscellaneous;
+
 import miscellaneous.Miscellaneous;
 import org.junit.jupiter.api.Test;
 

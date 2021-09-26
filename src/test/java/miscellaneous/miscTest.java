@@ -1,3 +1,5 @@
+package miscellaneous;
+
 import miscellaneous.Miscellaneous;
 import operations.PhrasalQueries;
 import org.junit.jupiter.api.Test;

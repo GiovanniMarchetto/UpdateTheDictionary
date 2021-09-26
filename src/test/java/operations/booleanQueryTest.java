@@ -1,3 +1,5 @@
+package operations;
+
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;
 import operations.BooleanQueries;

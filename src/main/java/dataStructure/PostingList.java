@@ -1,11 +1,12 @@
 package dataStructure;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class PostingList {
+public class PostingList implements Serializable {
 
     private HashMap<String, ArrayList<Integer>> postingList;
 
@@ -86,7 +87,9 @@ public class PostingList {
 
     public void printPostingListForDictionary(AtomicInteger counter) {
         this.postingList.forEach((docID, listPosition) -> {
-            if (counter.get() % 2 != 0) System.out.print("\t \t \t \t \t");
+            if (counter.get() % 2 != 0) {
+                System.out.print("\t \t \t \t \t");
+            }
             System.out.println("|---" + docID + " " + listPosition);
         });
     }
