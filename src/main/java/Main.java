@@ -1,4 +1,5 @@
 import dataStructure.Dictionary;
+import dataStructure.PostingList;
 import operations.BooleanQueries;
 import operations.PhrasalQueries;
 
@@ -57,9 +58,12 @@ public class Main {
                     ArrayList<String> listOfDocID = BooleanQueries.queryTerm(dictionary, input);
                     printResultDocumentList(listOfDocID);
                 }
-                //TODO: add phrasal query
-
-
+                case "pq" -> {
+                    System.out.println("Which phrase do you want to search in the dictionary?");
+                    input = keyboard.nextLine();
+                    PostingList listOfDocID = PhrasalQueries.phrasalQuery(dictionary, input);
+                    printResultDocumentList(listOfDocID.getDocIDListAsArrayList());
+                }
 
                 case "bool-AND" -> {
                     System.out.println("Which terms do you want in AND query (space between words)?");
@@ -116,6 +120,7 @@ public class Main {
 
         System.out.println("");
         System.out.println("term - to search a term in the dictionary");
+        System.out.println("pq - to search a phrase in the dictionary");
 
         System.out.println("");
         System.out.println("bool-AND - to do AND boolean query on the dictionary");

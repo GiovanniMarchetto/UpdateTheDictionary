@@ -48,9 +48,13 @@ public class PostingList {
         return this.postingList.containsKey(docID);
     }
 
-
+    //TODO: rename all getDocID methods like only getDocID
     public String[] getDocIDListAsArray() {
         return postingList.keySet().toArray(new String[0]);
+    }
+
+    public ArrayList<String> getDocIDListAsArrayList() {
+        return new ArrayList<>(postingList.keySet());
     }
 
     public Set<String> getDocIDListAsSet() {
