@@ -2,14 +2,13 @@ package operations;
 
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;
-import operations.BooleanQueries;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class booleanQueryTest {
+public class BooleanQueryTest {
 
     public static Dictionary dictionaryWithTestTextAB() {
         Dictionary dictionary = new Dictionary();

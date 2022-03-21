@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class phrasalQueryTest {
+public class PhrasalQueryTest {
 
     @Test
     void twoWordPhraseQuery() {
         Miscellaneous.testTitleFormatting("TEST-PHQ-TWO");
 
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextAB();
 
         PostingList answer = PhrasalQueries.phrasalQuery(dictionary, "the table");
 
@@ -30,7 +30,7 @@ public class phrasalQueryTest {
     @Test
     void threeWordPhraseQuery() {
         Miscellaneous.testTitleFormatting("TEST-PHQ-THREE");
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextAB();
         PostingList answer = PhrasalQueries.phrasalQuery(dictionary, "the table boy");
         assertEquals(0, answer.size());
     }
@@ -38,7 +38,7 @@ public class phrasalQueryTest {
     @Test
     void shortTimePQ() {
         Miscellaneous.testTitleFormatting("shortTimePQ");
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextAB();
 
         long startTime = System.nanoTime();
         PostingList answer1 = PhrasalQueries.phrasalQuery(dictionary, "the table");
@@ -50,7 +50,7 @@ public class phrasalQueryTest {
     @Test
     void shortTimePQ2() {
         Miscellaneous.testTitleFormatting("shortTimePQ2");
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextAB();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextAB();
         long startTime = System.nanoTime();
         PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "the table");
         assertEquals(1, answer2.size());
@@ -68,9 +68,7 @@ public class phrasalQueryTest {
         System.out.println("Used Memory before: " + usedMemoryBefore);
 
 
-
-
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextABC();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextABC();
         long startTime = System.nanoTime();
         for (int i = 0; i < 10; i++) {
             PostingList answer1 = PhrasalQueries.phrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
@@ -97,9 +95,7 @@ public class phrasalQueryTest {
         System.out.println("Used Memory before: " + usedMemoryBefore);
 
 
-
-
-        Dictionary dictionary = booleanQueryTest.dictionaryWithTestTextABC();
+        Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextABC();
         long startTime = System.nanoTime();
         for (int i = 0; i < 10; i++) {
             PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");

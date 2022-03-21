@@ -1,14 +1,15 @@
 package miscellaneous;
 
-import miscellaneous.Miscellaneous;
+import operations.BooleanQueryTest;
 import operations.PhrasalQueries;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class miscTest {
+public class MiscTest {
 
     @Test
     void misc_token() {
@@ -33,6 +34,11 @@ public class miscTest {
 //        dictionary.addDocumentAtDictionary(docPath);
 //        assertEquals(1, dictionary.getDocumentList().size());
 //        dictionary.printDictionary();
+    }
+
+    @Test
+    void findPathOfResources() {
+        assertNotNull(BooleanQueryTest.class.getClassLoader().getResource("A.txt"));
     }
 
 }
