@@ -163,8 +163,8 @@ public class Main {
 
         System.out.println();
         System.out.println("bool-AND - to do AND boolean query on the dictionary");
-        System.out.println("bool-OR - to do AND boolean query on the dictionary");
-        System.out.println("bool-NOT - to do AND boolean query on the dictionary");
+        System.out.println("bool-OR - to do OR boolean query on the dictionary");
+        System.out.println("bool-NOT - to do NOT boolean query on the dictionary");
 
         System.out.println();
         System.out.println("dict - to print the dictionary");
