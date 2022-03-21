@@ -29,6 +29,7 @@ public class Main {
                     try {
                         Dictionary persistentDictionary = xd.readFile();
                         dictionary.setDictionary(persistentDictionary.getDictionary());
+                        dictionary.setDocumentList(persistentDictionary.getDocumentList());
                         System.out.println("Dictionary loaded");
                     } catch (Exception e) {
                         System.out.println("Error during load of persistent dictionary... (new dictionary created)");
@@ -145,9 +146,13 @@ public class Main {
     }
 
     private static void printResultDocumentList(ArrayList<String> listOfDocID) {
-        System.out.println("The result document list is:");
-        for (String docID : listOfDocID) {
-            System.out.println("\t" + docID);
+        if (listOfDocID != null && listOfDocID.size() > 0) {
+            System.out.println("The result document list is:");
+            for (String docID : listOfDocID) {
+                System.out.println("\t" + docID);
+            }
+        } else {
+            System.out.println("The result document list is empty!");
         }
     }
 
