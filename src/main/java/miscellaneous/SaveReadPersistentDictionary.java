@@ -6,7 +6,7 @@ import java.io.*;
 
 public class SaveReadPersistentDictionary implements Serializable
 {
-    private static final String PATH = System.getProperty("user.dir") + "\\src\\main\\resources\\persistentDictionary.txt";
+    private static final String PATH = System.getProperty("user.dir") + "\\src\\main\\resources\\persistentDictionary";
 
     public void saveFile(Dictionary dictionary)
             throws IOException
