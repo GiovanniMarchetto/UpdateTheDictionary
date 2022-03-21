@@ -95,20 +95,20 @@ public class PhrasalQueries {
     }
 
     /*
-    *   The idea is to speed up the search for longer phrases.
-    *   To do this, we tried to filter the documents first
-    *       based on the longest and therefore theoretically rarest words.
-    *   In addition, to speed up this alternative search method,
-    *       a weaker search was made, i.e. removing the stop words,
-    *       but maintaining the positioning of the word
-    *      So the possible error is to false positive like:
-    *          phrase: "the cat is on the table"
-    *          false positive: "the cat is at a table"
-    *   In any case, the various tests have confirmed that searching
-    *       with the classic method (with words in order and
-    *       without previous filtering) is more efficient
-    *       even on long sentences.
-    * */
+     *   The idea is to speed up the search for longer phrases.
+     *   To do this, we tried to filter the documents first
+     *       based on the longest and therefore theoretically the rarest words.
+     *   In addition, to speed up this alternative search method,
+     *       a weaker search was made, i.e. removing the stop words,
+     *       but maintaining the positioning of the word
+     *      So the possible error is to false positive like:
+     *          phrase: "the cat is on the table"
+     *          false positive: "the cat is at a table"
+     *   In any case, the various tests have confirmed that searching
+     *       with the classic method (with words in order and
+     *       without previous filtering) is more efficient
+     *       even on long sentences.
+     * */
     public static PostingList alternativePhrasalQuery(Dictionary dictionary, String phraseString) {
 
         ArrayList<String> phrase = getTokenListFromPhrase(phraseString);

@@ -4,7 +4,6 @@ import miscellaneous.SaveReadPersistentDictionary;
 import operations.BooleanQueries;
 import operations.PhrasalQueries;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -36,9 +35,7 @@ public class Main {
                         System.out.println(e.getMessage());
                     }
                 }
-                case "n" -> {
-                    System.out.println("New dictionary created.");
-                }
+                case "n" -> System.out.println("New dictionary created.");
                 default -> {
                     System.out.println("Wrong command.");
                     continueOperation.set(true);
@@ -160,20 +157,20 @@ public class Main {
         System.out.println("addList - to add a list of document (path of the file that contain the list)");
         System.out.println("rmv - to remove a document");
 
-        System.out.println("");
+        System.out.println();
         System.out.println("term - to search a term in the dictionary");
         System.out.println("pq - to search a phrase in the dictionary");
 
-        System.out.println("");
+        System.out.println();
         System.out.println("bool-AND - to do AND boolean query on the dictionary");
         System.out.println("bool-OR - to do AND boolean query on the dictionary");
         System.out.println("bool-NOT - to do AND boolean query on the dictionary");
 
-        System.out.println("");
+        System.out.println();
         System.out.println("dict - to print the dictionary");
         System.out.println("dictList - to print the list of document");
 
-        System.out.println("");
+        System.out.println();
         System.out.println("help - to print the command palette");
         System.out.println("quit - to exit the program");
         System.out.println("\n---------------------------------------------------------");

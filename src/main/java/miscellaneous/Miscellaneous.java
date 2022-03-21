@@ -2,7 +2,10 @@ package miscellaneous;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Miscellaneous {
     public static final boolean DEBUG = false;
@@ -12,18 +15,43 @@ public class Miscellaneous {
             "'", "\""
     };
 
-    private static final String[] STOP_WORDS = {
-            "the", "and", "or", "a", "an",
-            "i", "you", "he", "she", "it", "we", "they",
-            "is", "are",
-            "to","on"
-    };
+    public static int stop_word_list_size = 1;
 
-    private static final List<String> STOP_WORDS_LIST = Arrays.asList(STOP_WORDS);
+    private static final List<String> STOP_WORDS_LIST = getStopWordList();    // https://www.ranks.nl/stopwords
 
-    public static void doNormalizationOnArrayListOfString(ArrayList<String> stringArrayList){
+    private static List<String> getStopWordList() {
+        ArrayList<String> list = new ArrayList<>();
+        String stopWordSize;
+
+        switch (stop_word_list_size) {
+            case 0 -> stopWordSize = "essential";
+            case 1 -> stopWordSize = "standard";
+            case 2 -> stopWordSize = "extended";
+            default -> throw new IllegalStateException("Unexpected value: " + stop_word_list_size);
+        }
+
+        try {
+            URL url = Miscellaneous.class.getClassLoader().getResource("stopWords_" + stopWordSize + ".txt");
+            if (url == null) {
+                System.err.println("No stop word list found!");
+                return null;
+            }
+            Scanner s = new Scanner(new File(url.getPath()));
+            while (s.hasNext()) {
+                list.add(s.next());
+            }
+            s.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(list);
+        return list;
+    }
+
+    public static void doNormalizationOnArrayListOfString(ArrayList<String> stringArrayList) {
         for (int i = 0, stringArrayListSize = stringArrayList.size(); i < stringArrayListSize; i++) {
-            stringArrayList.set(i,getNormalizeToken(stringArrayList.get(i)));
+            stringArrayList.set(i, getNormalizeToken(stringArrayList.get(i)));
         }
     }
 
@@ -44,8 +72,10 @@ public class Miscellaneous {
         return token;
     }
 
-    public static void removeStopWords(ArrayList<String> list){
-        list.removeIf(STOP_WORDS_LIST::contains);
+    public static void removeStopWords(ArrayList<String> list) {
+        if (STOP_WORDS_LIST != null) {
+            list.removeIf(STOP_WORDS_LIST::contains);
+        }
     }
 
 
