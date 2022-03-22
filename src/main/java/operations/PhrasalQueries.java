@@ -25,7 +25,7 @@ public class PhrasalQueries {
         }
 
         // Build the final answer with the positions of Posting List that are hte start of the phrase
-        return getAnswerPostingListWithPositionOfTheStartOfPhrase(dictionary, phrase, firstWord, filteredPostingList);
+        return getAnswerPostingListWithPositionOfTheStartOfPhrase(dictionary, phrase.size(), firstWord, filteredPostingList);
     }
 
     private static PostingList matchingPostingListOfTwoAdjacentWords(PostingList firstPL, PostingList secondPL) {
@@ -58,11 +58,10 @@ public class PhrasalQueries {
     }
 
     private static PostingList getAnswerPostingListWithPositionOfTheStartOfPhrase(
-            Dictionary dictionary, ArrayList<String> phrase, String firstWord, PostingList filteredPostingList) {
+            Dictionary dictionary, int totalWords, String firstWord, PostingList filteredPostingList) {
 
         PostingList firstPostingList = dictionary.getPostingList(firstWord);
         PostingList answerPostingList = new PostingList();
-        int totalWords = phrase.size();
         for (String docID : filteredPostingList.getDocIDListAsSet()) {
 
             if (firstPostingList.getDocIDListAsSet().contains(docID)) {
@@ -116,18 +115,18 @@ public class PhrasalQueries {
         ArrayList<String> baseDocumentList = BooleanQueries.queryAND(dictionary, phraseTemp);
         String firstWord = phrase.get(0);
         String firstWordTemp = phraseTemp.get(0);
-        PostingList antePostingList = queryANDPostingListWithDocumentList(dictionary.getPostingList(firstWordTemp), baseDocumentList);
+        PostingList filteredPostingList = queryANDPostingListWithDocumentList(dictionary.getPostingList(firstWordTemp), baseDocumentList);
 
         for (int i = 1; i < phraseTemp.size(); i++) {
             PostingList postPostingList = dictionary.getPostingList(phraseTemp.get(i));
             PostingList finalPostingList = new PostingList();
 
-            Set<String> docIDListAnte = antePostingList.getDocIDListAsSet();
+            Set<String> docIDListAnte = filteredPostingList.getDocIDListAsSet();
             Set<String> docIDListPost = postPostingList.getDocIDListAsSet();
 
             for (String docID : docIDListAnte) {
                 if (docIDListPost.contains(docID)) {
-                    ArrayList<Integer> listOfPositionAnte = antePostingList.getListOfPositionOfDocID(docID);
+                    ArrayList<Integer> listOfPositionAnte = filteredPostingList.getListOfPositionOfDocID(docID);
                     ArrayList<Integer> listOfPositionPost = postPostingList.getListOfPositionOfDocID(docID);
                     int lastPostPosition = listOfPositionPost.get(listOfPositionPost.size() - 1);
 
@@ -143,35 +142,12 @@ public class PhrasalQueries {
                 }
             }
 
-            antePostingList = finalPostingList;
+            filteredPostingList = finalPostingList;
         }
 
-        // Build the final answer with the start of the phrase
-        PostingList firstPostingList = dictionary.getPostingList(firstWord);
-        PostingList answerPostingList = new PostingList();
-        int positionOfWordOfAntePostingList = phrase.indexOf(phraseTemp.get(phraseTemp.size()-1));
-        for (String docID : antePostingList.getDocIDListAsSet()) {
+        int positionOfLastWord = phrase.indexOf(phraseTemp.get(phraseTemp.size() - 1)) + 1;
 
-            if (firstPostingList.getDocIDListAsSet().contains(docID)) {
-
-                ArrayList<Integer> anteListOfPosition = antePostingList.getListOfPositionOfDocID(docID);
-                int anteLastPosition = anteListOfPosition.get(anteListOfPosition.size() - 1);
-
-                for (int startPosition : firstPostingList.getListOfPositionOfDocID(docID)) {
-
-                    int endPosition = startPosition + positionOfWordOfAntePostingList;
-
-                    if (endPosition > anteLastPosition) {
-                        break;
-                    }
-
-                    if (anteListOfPosition.contains(endPosition)) {
-                        answerPostingList.addPosting(docID, startPosition);
-                    }
-                }
-            }
-        }
-        return answerPostingList;
+        return getAnswerPostingListWithPositionOfTheStartOfPhrase(dictionary, positionOfLastWord, firstWord, filteredPostingList);
 
     }
 
@@ -180,7 +156,7 @@ public class PhrasalQueries {
         Set<String> docIDList = postingList.getDocIDListAsSet();
 
         for (String docID : docIDList) {
-            //if the document is present in the document list AND in the posting list it remain
+            //if the document is present in the document list AND in the posting list it remains
             if (documentList.contains(docID)) {
                 resultPostingList.addPosting(docID, postingList.getListOfPositionOfDocID(docID));
             }
