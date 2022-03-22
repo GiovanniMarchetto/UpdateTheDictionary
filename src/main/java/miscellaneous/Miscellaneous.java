@@ -8,54 +8,6 @@ import java.util.Scanner;
 public class Miscellaneous {
     public static final boolean DEBUG = false;
 
-    private static final String[] SPECIAL_CHARACTERS = {
-            ".", ",", ";", ":", "(", ")", "!", "?", "/", "[", "]", "{", "}",
-            "'", "\""
-    };
-
-    public static void doNormalizationOnArrayListOfString(ArrayList<String> stringArrayList) {
-        for (int i = 0, stringArrayListSize = stringArrayList.size(); i < stringArrayListSize; i++) {
-            stringArrayList.set(i, getNormalizeToken(stringArrayList.get(i)));
-        }
-    }
-
-    public static String getNormalizeToken(String token) {
-        token = token.toLowerCase();// no distinction of names
-        //TODO: plural? stop word?
-
-        //TODO: special character also in the middle of the words? and 's.. ecc
-        for (String suffix : SPECIAL_CHARACTERS) {
-            if (token.startsWith(suffix)) {
-                token = token.substring(1);
-            }
-            if (token.endsWith(suffix)) {
-                token = token.substring(0, token.length() - 1);
-            }
-        }
-
-        return token;
-    }
-
-
-    public static ArrayList<String> getListOfTokenFromFile(String docPath) { // alias tokenization
-        Scanner inputStream;
-        try {
-            inputStream = new Scanner(new File(docPath));
-        } catch (FileNotFoundException e) {
-            System.out.println("Document not found " + docPath);
-            return null;
-//            System.exit(0);
-        }
-
-        ArrayList<String> tokenList = new ArrayList<>();
-        while (inputStream.hasNext()) {
-            String token = inputStream.next();
-            tokenList.add(token);
-        }
-        inputStream.close();
-        return tokenList;
-    }
-
     public static ArrayList<String> getListOfLines(String listPath) {
         Scanner inputStream;
         try {
@@ -83,4 +35,26 @@ public class Miscellaneous {
 
         System.out.printf("%s   %s   %s%n", separator.substring(0, beforeIndex), title, separator.substring(0, afterIndex));
     }
+
+    public static void welcomeOutput() {
+        System.out.println("\nWelcome to the updating dictionary project.");
+        System.out.println(
+                "\n" +
+                        "    __________________   __________________\n" +
+                        ".-/|                  \\ /                  |\\-.\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||      ~~*~~        |       ~~*~~       ||||\n" +
+                        "||||   UPDATING THE    |     DICTIONARY    ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||    --==*==--      |     --==*==--     ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||__________________ | __________________||||\n" +
+                        "||/===================\\|/===================\\||\n" +
+                        "`--------------------~___~-------------------''");
+    }
+
 }

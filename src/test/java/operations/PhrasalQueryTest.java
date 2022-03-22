@@ -52,7 +52,8 @@ public class PhrasalQueryTest {
         Miscellaneous.testTitleFormatting("shortTimePQ2");
         Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextAB();
         long startTime = System.nanoTime();
-        PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "the table");
+        PostingList answer2 = PhrasalQueries.phrasalQueryWithAlwaysRemovingStopWords(dictionary, "the table");
+        assert answer2 != null;
         assertEquals(1, answer2.size());
         long endTime = System.nanoTime();
         System.out.println("Total time for quick phrase query:  " + (endTime - startTime));
@@ -98,7 +99,9 @@ public class PhrasalQueryTest {
         Dictionary dictionary = BooleanQueryTest.dictionaryWithTestTextABC();
         long startTime = System.nanoTime();
         for (int i = 0; i < 10; i++) {
-            PostingList answer2 = PhrasalQueries.alternativePhrasalQuery(dictionary, "To return to the previous page viewed, click the Back button on your device or app.");
+            PostingList answer2 = PhrasalQueries.phrasalQueryWithAlwaysRemovingStopWords(dictionary,
+                    "To return to the previous page viewed, click the Back button on your device or app.");
+            assert answer2 != null;
             assertEquals(1, answer2.size());
         }
         long endTime = System.nanoTime();

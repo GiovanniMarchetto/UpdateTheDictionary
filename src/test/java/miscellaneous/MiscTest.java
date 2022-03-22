@@ -1,7 +1,6 @@
 package miscellaneous;
 
 import operations.BooleanQueryTest;
-import operations.PhrasalQueries;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,14 +15,14 @@ public class MiscTest {
         Miscellaneous.testTitleFormatting("TEST-TOKEN");
 
         String token = "good";
-        String normToken = Miscellaneous.getNormalizeToken(token);
+        String normToken = Normalization.getNormalizeToken(token);
         assertEquals("good", normToken);
     }
 
     @Test
     void removeStopWords() {
         Miscellaneous.testTitleFormatting("REMOVE STOP WORDS");
-        ArrayList<String> phrase = PhrasalQueries.getTokenListFromPhrase("The pen is on the table");
+        ArrayList<String> phrase = Tokenization.getNormalizeTokenListFromPhrase("The pen is on the table");
         System.out.println(phrase);
         assertEquals(6, phrase.size());
         StopWord.removeStopWords(phrase);

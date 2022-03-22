@@ -1,20 +1,37 @@
 package dataStructure;
 
 import miscellaneous.Miscellaneous;
+import miscellaneous.Normalization;
+import miscellaneous.StopWord;
+import miscellaneous.Tokenization;
 
 import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static miscellaneous.StopWord.StopWordSize;
+import static miscellaneous.StopWord.setStopWordList;
+
 public class Dictionary implements Serializable {
 
+    private StopWordSize stopWordListSize;
     private HashMap<String, PostingList> dictionary;
-
     private ArrayList<String> documentList;
 
     public Dictionary() {
         dictionary = new HashMap<>();
         documentList = new ArrayList<>();
+        stopWordListSize = StopWordSize.STANDARD;
+        setStopWordList(stopWordListSize);
+    }
+
+    public StopWordSize getStopWordListSize() {
+        return stopWordListSize;
+    }
+
+    public void setStopWordListSize(StopWordSize newStopWordListSize) {
+        stopWordListSize = newStopWordListSize;
+        setStopWordList(stopWordListSize);
     }
 
     public HashMap<String, PostingList> getDictionary() {
@@ -59,17 +76,16 @@ public class Dictionary implements Serializable {
             System.out.println("with the alias: " + docID);
         }
 
-        ArrayList<String> tokenList = Miscellaneous.getListOfTokenFromFile(docPath);
+        ArrayList<String> tokenList = Tokenization.getListOfTokenFromFile(docPath);
         if (tokenList == null) {
             return "";
         }
+        Normalization.normalizeListOfString(tokenList);
+        StopWord.removeStopWords(tokenList);
+
         AtomicInteger positionOfToken = new AtomicInteger(1);
 
         for (String token : tokenList) {
-            token = Miscellaneous.getNormalizeToken(token);
-            if (token.equals("")) {
-                continue;
-            }
             PostingList postingList = new PostingList();
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);

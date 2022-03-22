@@ -1,7 +1,9 @@
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
+import miscellaneous.Miscellaneous;
 import miscellaneous.QueryMode;
 import miscellaneous.SaveReadPersistentDictionary;
+import miscellaneous.Tokenization;
 import operations.BooleanQueries;
 import operations.PhrasalQueries;
 
@@ -15,24 +17,7 @@ public class Main {
     private static QueryMode queryMode = QueryMode.AND;
 
     public static void main(String[] args) {
-        System.out.println("\nWelcome to the updating dictionary project.");
-        System.out.println(
-                "\n" +
-                        "    __________________   __________________\n" +
-                        ".-/|                  \\ /                  |\\-.\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||      ~~*~~        |       ~~*~~       ||||\n" +
-                        "||||   UPDATING THE    |     DICTIONARY    ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||    --==*==--      |     --==*==--     ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||                   |                   ||||\n" +
-                        "||||__________________ | __________________||||\n" +
-                        "||/===================\\|/===================\\||\n" +
-                        "`--------------------~___~-------------------''");
+        Miscellaneous.welcomeOutput();
 
         SaveReadPersistentDictionary xd = new SaveReadPersistentDictionary();
 
@@ -48,9 +33,7 @@ public class Main {
             switch (input) {
                 case "y" -> {
                     try {
-                        Dictionary persistentDictionary = xd.readFile();
-                        dictionary.setDictionary(persistentDictionary.getDictionary());
-                        dictionary.setDocumentList(persistentDictionary.getDocumentList());
+                        dictionary = xd.readFile();
                         System.out.println("Dictionary loaded");
                     } catch (Exception e) {
                         System.out.println("Error during load of persistent dictionary... (new dictionary created)");
@@ -90,7 +73,6 @@ public class Main {
                     for (String docID : listDocID) {
                         System.out.println("The docID " + docID + " has been successfully added");
                     }
-
                 }
                 case "r" -> {
                     System.out.println("Which of this document you want to remove from the dictionary?");
@@ -132,7 +114,7 @@ public class Main {
                 case "query" -> {
                     System.out.println("Which terms do you want in bool query? (" + queryMode + " mode)");
                     input = keyboard.nextLine();
-                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
+                    ArrayList<String> listOfToken = Tokenization.getNormalizeTokenListFromPhrase(input);
                     ArrayList<String> listOfDocID;
 
                     switch (queryMode) {

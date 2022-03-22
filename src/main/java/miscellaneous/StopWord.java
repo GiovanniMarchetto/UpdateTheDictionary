@@ -9,31 +9,39 @@ import java.util.Scanner;
 
 public class StopWord {
 
-    private static StopWordSize stopWordListSize = StopWordSize.STANDARD;
-    private static List<String> stopWordList = getStopWordList();    // https://www.ranks.nl/stopwords
+    public static final List<String> extendedStopWordList = getStopWordListFromSizeString("extended");
 
-    public static void setStopWordListSize(StopWordSize stopWordListSize) {
-        if (stopWordListSize == null) return;
-        StopWord.stopWordListSize = stopWordListSize;
-        stopWordList = getStopWordList();
+    private static List<String> stopWordList;    // https://www.ranks.nl/stopwords
+
+    public static List<String> getStopWordList() {
+        return stopWordList;
     }
 
-    private static List<String> getStopWordList() {
-        ArrayList<String> list = new ArrayList<>();
+    public static void setStopWordList(StopWordSize stopWordListSize) {
         String stopWordSize;
 
         switch (stopWordListSize) {
+            case NONE -> {
+                stopWordList = new ArrayList<>();
+                return;
+            }
             case ESSENTIAL -> stopWordSize = "essential";
             case STANDARD -> stopWordSize = "standard";
             case EXTENDED -> stopWordSize = "extended";
             default -> throw new IllegalStateException("Unexpected value: " + stopWordListSize);
         }
 
+        stopWordList = getStopWordListFromSizeString(stopWordSize);
+    }
+
+    private static List<String> getStopWordListFromSizeString(String stopWordSize) {
+        ArrayList<String> list = new ArrayList<>();
+
         try {
             URL url = Miscellaneous.class.getClassLoader().getResource("stopWords_" + stopWordSize + ".txt");
             if (url == null) {
                 System.err.println("No stop word list found!");
-                return null;
+                return list;
             }
             Scanner s = new Scanner(new File(url.getPath()));
             while (s.hasNext()) {
@@ -48,12 +56,13 @@ public class StopWord {
     }
 
     public static void removeStopWords(ArrayList<String> list) {
-        if (StopWord.stopWordList != null) {
-            list.removeIf(StopWord.stopWordList::contains);
+        if (stopWordList != null) {
+            list.removeIf(stopWordList::contains);
         }
     }
 
     public enum StopWordSize {
+        NONE,
         ESSENTIAL,
         STANDARD,
         EXTENDED

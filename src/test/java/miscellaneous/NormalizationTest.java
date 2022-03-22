@@ -8,20 +8,20 @@ public class NormalizationTest {
 
     @Test
     void cat() {
-        assertEquals("cat", Miscellaneous.getNormalizeToken("cat"));
+        assertEquals("cat", Normalization.getNormalizeToken("cat"));
     }
 
     @Test
     void catM() {
         String w = "CAT";
-        String w2 = Miscellaneous.getNormalizeToken(w);
+        String w2 = Normalization.getNormalizeToken(w);
         assertEquals("cat",w2 );
 //        System.out.println(w+" ----  "+w2);
     }
 
     @Test
     void catParDot() {
-        assertEquals("cat", Miscellaneous.getNormalizeToken("(CaT."));
+        assertEquals("cat", Normalization.getNormalizeToken("(CaT."));
     }
 
 }
