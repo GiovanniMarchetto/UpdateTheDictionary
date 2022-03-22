@@ -16,51 +16,33 @@ public class Main {
 
     private static QueryMode queryMode = QueryMode.AND;
 
+    private static Dictionary dictionary;
+    private static SaveReadPersistentDictionary xd;
+    private static Scanner keyboard;
+    private static String input;
+    private static AtomicBoolean continueOperation;
+
     public static void main(String[] args) {
         Miscellaneous.welcomeOutput();
 
-        SaveReadPersistentDictionary xd = new SaveReadPersistentDictionary();
+        dictionary = new Dictionary();
+        keyboard = new Scanner(System.in);
+        continueOperation = new AtomicBoolean(true);
 
-        Dictionary dictionary = new Dictionary();
-        Scanner keyboard = new Scanner(System.in);
-        String input;
-        AtomicBoolean continueOperation = new AtomicBoolean(true);
-
-        while (continueOperation.get()) {
-            System.out.println("\nDo you want to load the previous dictionary? (y/n)");
-            continueOperation.set(false);
-            input = keyboard.nextLine();
-            switch (input) {
-                case "y" -> {
-                    try {
-                        dictionary = xd.readFile();
-                        System.out.println("Dictionary loaded");
-                    } catch (Exception e) {
-                        System.out.println("Error during load of persistent dictionary... (new dictionary created)");
-                        System.out.println(e.getMessage());
-                    }
-                }
-                case "n" -> System.out.println("New dictionary created.");
-                default -> {
-                    System.out.println("Wrong command.");
-                    continueOperation.set(true);
-                }
-            }
-        }
+        xd = recoverDictionary();
 
         continueOperation.set(true);
-
 
         printCommandPalette();
 
         while (continueOperation.get()) {
 
             System.out.print("\nCommand: ");
-            input = keyboard.nextLine();
+            inputIsNextLine();
             switch (input) {
                 case "add" -> {
                     System.out.println("Path of the document to add at the dictionary:");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     String newDocID = dictionary.addDocumentAtDictionary(input);
                     if (!newDocID.equals("")) {
                         System.out.println("The docID " + newDocID + " has been successfully added");
@@ -68,7 +50,7 @@ public class Main {
                 }
                 case "addList" -> {
                     System.out.println("Path of the document that contain the list of documents to add at the dictionary:");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     ArrayList<String> listDocID = dictionary.addDocumentsFromListAtDictionary(input);
                     for (String docID : listDocID) {
                         System.out.println("The docID " + docID + " has been successfully added");
@@ -77,7 +59,7 @@ public class Main {
                 case "r" -> {
                     System.out.println("Which of this document you want to remove from the dictionary?");
                     dictionary.printDocumentList();
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     String removeDocID = dictionary.removeDocumentFromDictionary(input);
                     if (!removeDocID.equals("")) {
                         System.out.println("The docID " + removeDocID + " has been successfully removed");
@@ -86,14 +68,14 @@ public class Main {
 
                 case "term" -> {
                     System.out.println("Which term do you want to search in the dictionary?");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     ArrayList<String> listOfDocID = BooleanQueries.queryTerm(dictionary, input);
                     printResultDocumentList(listOfDocID);
                 }
 
                 case "mode" -> {
                     System.out.println("Which bool mode for query? --> AND, OR, NOT");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
 
                     boolean find = false;
                     for (QueryMode mode : QueryMode.values()) {
@@ -113,7 +95,7 @@ public class Main {
 
                 case "query" -> {
                     System.out.println("Which terms do you want in bool query? (" + queryMode + " mode)");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     ArrayList<String> listOfToken = Tokenization.getNormalizeTokenListFromPhrase(input);
                     ArrayList<String> listOfDocID;
 
@@ -129,7 +111,7 @@ public class Main {
 
                 case "phrasal query" -> {
                     System.out.println("Which phrase do you want to search in the dictionary?");
-                    input = keyboard.nextLine();
+                    inputIsNextLine();
                     PostingList listOfDocID = PhrasalQueries.phrasalQuery(dictionary, input);
                     printResultDocumentList(listOfDocID.getDocIDListAsArrayList());
                 }
@@ -159,6 +141,36 @@ public class Main {
             System.out.println(e.getMessage());
         }
         System.out.println("### End Program ###");
+    }
+
+    private static void inputIsNextLine() {
+        input = keyboard.nextLine();
+    }
+
+    private static SaveReadPersistentDictionary recoverDictionary() {
+
+        while (continueOperation.get()) {
+            System.out.println("\nDo you want to load the previous dictionary? (y/n)");
+            continueOperation.set(false);
+            inputIsNextLine();
+            switch (input) {
+                case "y" -> {
+                    try {
+                        dictionary = xd.readFile();
+                        System.out.println("Dictionary loaded");
+                    } catch (Exception e) {
+                        System.out.println("Error during load of persistent dictionary... (new dictionary created)");
+                        System.out.println(e.getMessage());
+                    }
+                }
+                case "n" -> System.out.println("New dictionary created.");
+                default -> {
+                    System.out.println("Wrong command.");
+                    continueOperation.set(true);
+                }
+            }
+        }
+        return xd;
     }
 
     private static void printResultDocumentList(ArrayList<String> listOfDocID) {
