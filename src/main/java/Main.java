@@ -16,6 +16,23 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("\nWelcome to the updating dictionary project.");
+        System.out.println(
+                "\n" +
+                        "    __________________   __________________\n" +
+                        ".-/|                  \\ /                  |\\-.\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||      ~~*~~        |       ~~*~~       ||||\n" +
+                        "||||   UPDATING THE    |     DICTIONARY    ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||    --==*==--      |     --==*==--     ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||                   |                   ||||\n" +
+                        "||||__________________ | __________________||||\n" +
+                        "||/===================\\|/===================\\||\n" +
+                        "`--------------------~___~-------------------''");
 
         SaveReadPersistentDictionary xd = new SaveReadPersistentDictionary();
 

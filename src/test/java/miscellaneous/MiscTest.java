@@ -26,7 +26,7 @@ public class MiscTest {
         ArrayList<String> phrase = PhrasalQueries.getTokenListFromPhrase("The pen is on the table");
         System.out.println(phrase);
         assertEquals(6, phrase.size());
-        Miscellaneous.removeStopWords(phrase);
+        StopWord.removeStopWords(phrase);
         System.out.println(phrase);
 
 //        Dictionary dictionary = new Dictionary();

@@ -3,6 +3,7 @@ package operations;
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
 import miscellaneous.Miscellaneous;
+import miscellaneous.StopWord;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -110,7 +111,7 @@ public class PhrasalQueries {
         Miscellaneous.doNormalizationOnArrayListOfString(phrase);
 
         ArrayList<String> phraseTemp = new ArrayList<>(phrase);
-        Miscellaneous.removeStopWords(phraseTemp);
+        StopWord.removeStopWords(phraseTemp);
 
         ArrayList<String> baseDocumentList = BooleanQueries.queryAND(dictionary, phraseTemp);
         String firstWord = phrase.get(0);
