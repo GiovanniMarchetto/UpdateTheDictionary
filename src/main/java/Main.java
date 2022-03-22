@@ -1,14 +1,18 @@
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
+import miscellaneous.QueryMode;
 import miscellaneous.SaveReadPersistentDictionary;
 import operations.BooleanQueries;
 import operations.PhrasalQueries;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
+
+    private static QueryMode queryMode = QueryMode.AND;
 
     public static void main(String[] args) {
         System.out.println("\nWelcome to the updating dictionary project.");
@@ -81,42 +85,55 @@ public class Main {
                     }
                 }
 
-
                 case "term" -> {
                     System.out.println("Which term do you want to search in the dictionary?");
                     input = keyboard.nextLine();
                     ArrayList<String> listOfDocID = BooleanQueries.queryTerm(dictionary, input);
                     printResultDocumentList(listOfDocID);
                 }
-                case "pq" -> {
+
+                case "mode" -> {
+                    System.out.println("Which bool mode for query? --> AND, OR, NOT");
+                    input = keyboard.nextLine();
+
+                    boolean find = false;
+                    for (QueryMode mode : QueryMode.values()) {
+                        if (Objects.equals(mode.toString(), input)) {
+                            queryMode = QueryMode.valueOf(input);
+                            find = true;
+                            break;
+                        }
+                    }
+
+                    if (!find) {
+                        System.out.println("Wrong input!");
+                    }
+
+                    System.out.println("The current mode is " + queryMode);
+                }
+
+                case "query" -> {
+                    System.out.println("Which terms do you want in bool query? (" + queryMode + " mode)");
+                    input = keyboard.nextLine();
+                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
+                    ArrayList<String> listOfDocID;
+
+                    switch (queryMode) {
+                        case AND -> listOfDocID = BooleanQueries.queryAND(dictionary, listOfToken);
+                        case OR -> listOfDocID = BooleanQueries.queryOR(dictionary, listOfToken);
+                        case NOT -> listOfDocID = BooleanQueries.queryNOT(dictionary, listOfToken);
+                        default -> throw new IllegalStateException("Unexpected value: " + queryMode);
+                    }
+
+                    printResultDocumentList(listOfDocID);
+                }
+
+                case "phrasal query" -> {
                     System.out.println("Which phrase do you want to search in the dictionary?");
                     input = keyboard.nextLine();
                     PostingList listOfDocID = PhrasalQueries.phrasalQuery(dictionary, input);
                     printResultDocumentList(listOfDocID.getDocIDListAsArrayList());
                 }
-
-                case "bool-AND" -> {
-                    System.out.println("Which terms do you want in AND query (space between words)?");
-                    input = keyboard.nextLine();
-                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
-                    ArrayList<String> listOfDocID = BooleanQueries.queryAND(dictionary, listOfToken);
-                    printResultDocumentList(listOfDocID);
-                }
-                case "bool-OR" -> {
-                    System.out.println("Which terms do you want in OR query (space between words)?");
-                    input = keyboard.nextLine();
-                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
-                    ArrayList<String> listOfDocID = BooleanQueries.queryOR(dictionary, listOfToken);
-                    printResultDocumentList(listOfDocID);
-                }
-                case "bool-NOT" -> {
-                    System.out.println("Which terms do you want in NOT query (space between words)?");
-                    input = keyboard.nextLine();
-                    ArrayList<String> listOfToken = PhrasalQueries.getTokenListFromPhrase(input);
-                    ArrayList<String> listOfDocID = BooleanQueries.queryNOT(dictionary, listOfToken);
-                    printResultDocumentList(listOfDocID);
-                }
-
 
                 case "dict" -> dictionary.printDictionary();
                 case "dictList" -> dictionary.printDocumentList();
@@ -163,13 +180,10 @@ public class Main {
         System.out.println("rmv - to remove a document");
 
         System.out.println();
+        System.out.println("mode - change bool mode for query");
         System.out.println("term - to search a term in the dictionary");
-        System.out.println("pq - to search a phrase in the dictionary");
-
-        System.out.println();
-        System.out.println("bool-AND - to do AND boolean query on the dictionary");
-        System.out.println("bool-OR - to do OR boolean query on the dictionary");
-        System.out.println("bool-NOT - to do NOT boolean query on the dictionary");
+        System.out.println("query - to do a boolean query on the dictionary");
+        System.out.println("phrasal query - to search a phrase in the dictionary");
 
         System.out.println();
         System.out.println("dict - to print the dictionary");
