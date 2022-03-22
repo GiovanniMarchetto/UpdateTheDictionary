@@ -15,7 +15,7 @@ public class Miscellaneous {
             "'", "\""
     };
 
-    public static int stop_word_list_size = 1;
+    public static StopWordSize stop_word_list_size = StopWordSize.STANDARD;
 
     private static final List<String> STOP_WORDS_LIST = getStopWordList();    // https://www.ranks.nl/stopwords
 
@@ -24,9 +24,9 @@ public class Miscellaneous {
         String stopWordSize;
 
         switch (stop_word_list_size) {
-            case 0 -> stopWordSize = "essential";
-            case 1 -> stopWordSize = "standard";
-            case 2 -> stopWordSize = "extended";
+            case ESSENTIAL -> stopWordSize = "essential";
+            case STANDARD -> stopWordSize = "standard";
+            case EXTENDED -> stopWordSize = "extended";
             default -> throw new IllegalStateException("Unexpected value: " + stop_word_list_size);
         }
 
