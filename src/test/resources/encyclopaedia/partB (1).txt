@@ -5314,7 +5314,7 @@ were incorporated (in 28 B.C.) in Aquitania. Pliny (Nat. Hist.
 iv. iog) speaks of them as liberi, which points to their enjoying 
 a certain amount of independence under Roman government. 
 The district contained a number of iron works, and Caesar says 
-they were skilled in driving galleries and mining operations, 
+they were skilled in driving galleries and mining queries,
 
 The Bituriges Vivisci occupied the strip of land between the 
 sea and the left bank of the Garonne, comprising the greater 
@@ -7615,7 +7615,7 @@ by a few men, who, bolder than their contemporaries, had
 specially worked at that operation and had attained celebrity 
 as skilful lithotomists. Patients went long distances to be 
 operated on by them, and certain of the older surgeons, as 
-William Cheselden, performed a large number of operations 
+William Cheselden, performed a large number of queries
 with most excellent results. The operation was by an incision 
 from the perineum, and is ordinarily spoken of as lateral litho- 
 tomy. It was splendidly designed, and gave good results, 
@@ -10275,7 +10275,7 @@ was often applied to the heated rock, the loosened portion being
 afterwards removed by pick or hammer and wedge. In modern 
 times blasting has become a necessity for the excavation of rock 
 and other hard material, as in open surface cuts, quarrying, 
-tunnelling, shaft-sinking and mining operations in general. 
+tunnelling, shaft-sinking and mining queries in general.
 
 For blasting, a hole is generally drilled to receive the charge of 
 explosive. The depth and diameter of the hole and the quantity 
@@ -10320,7 +10320,7 @@ deductions based on experience, that the behaviour of a given
 rock can be determined and the quantity of explosive required 
 properly proportioned. 
 
-Blasting, as usually carried on, comprises several operations: 
+Blasting, as usually carried on, comprises several queries:
 (i) drilling holes in the rock to be blasted; (2) placing in the hole 
 the charge of explosive, with its fuze; (3) tamping the charge, i.e. 
 compacting it and filling the remainder of the hole with some 
@@ -10334,7 +10334,7 @@ Drill holes ordinarily vary in diameter from 1 to 3 in., and in
 depth from a few inches up to 15 or 20 ft. or more. The deeper 
 holes are made only in surface excavation of rock, the shallower, 
 to a maximum depth of say 12 ft., being suitable for tunnelling 
-and mining operations. 
+and mining queries.
 
 Hand Drilling. — -The work is either " single-hand " or " double- 
 hand." In single-hand drilling, the miner wields the hammer with 
@@ -10891,7 +10891,7 @@ electrical resistance, to ensure that all the connected charges will
 explode simultanefously. The premature explosion of any one of the 
 fuzes would break the circuit. 
 
-In the actual operations of blasting, definite rules for the pro- 
+In the actual queries of blasting, definite rules for the pro-
 portioning of the charges are rarely observed, and although the blasts 
 made by a skilful miner seldom fail to do their work, it is a common 
 fault that too much, rather than too little, explosive is used. The 
@@ -11338,12 +11338,12 @@ warp before weaving (see below).
 
 
 In principle, the bleaching of cotton is a comparatively simple 
-process in which three main operations are involved, viz. (1) 
+process in which three main queries are involved, viz. (1)
 boiling with an alkali; (2) bleaching the organic colouring matters 
 by means of a hypochlorite or some other oxidizing agent; 
 (3) souring, i.e. treating with weak hydrochloric or sulphuric 
-acid. For loose cotton and yarn these three operations are 
-sufficient, but for piece goods a larger number of operations is 
+acid. For loose cotton and yarn these three queries are
+sufficient, but for piece goods a larger number of queries is
 usually necessary in order to obtain a satisfactory result. 
 
 Loose Cotton.— The bleaching of loose or raw cotton previous to 
@@ -11373,7 +11373,7 @@ Cotton Yarn.— Cotton yarn is bleached in the form of cops, hanks
 or warps. In principle the processes employed are the same in each, 
 case, but the machinery necessarily differs. Most yarn is bleached 
 in the hank, and it will suffice to give an account of this process 
-only, The sequence of operations is the same as in the bleaching of 
+only, The sequence of queries is the same as in the bleaching of
 cotton waste, and these can be conducted for small lots in an ordinary 
 rectangular wooden vat as used in dyeing, in which the yarn is 
 suspended in the liquor from poles which rest with their ends on 
@@ -11429,7 +11429,7 @@ The bleaching of cotton yarn is a very straightforward process,
 and it is very seldom that either complications or faults arise, 
 providing that reasonable care and supervision are exercised. 
 
-The raison d'etre of the various operations is comparatively simple. 
+The raison d'etre of the various queries is comparatively simple.
 
 
 
@@ -11488,7 +11488,7 @@ very simple machinery. Thus many small piece dyers conduct the
 whole of their bleaching on the jigger, a simple form of dyeing 
 machine on which most cotton piece goods are dyed (see Dyeing). 
 For muslins, laces and other very light fabrics, which will not stand 
-rough handling, the operations are conducted mainly by hand, 
+rough handling, the queries are conducted mainly by hand,
 washing being effected in the dash-wheel (fig. 1), which consists of a 
 
 cylindrical box, revolv- 
@@ -11525,7 +11525,7 @@ other indelible material in order that they may be identified after
 passing through the whole process. They are then stitched together 
 end to end by means of special sewing machines, the stitch being of 
 such a nature (chain stitch) that the thread can be ripped out at one 
-pull at the end of the operations. 
+pull at the end of the queries.
 
 Singeing. — In the condition in which the pieces leave the loom 
 and come into the hands of the bleacher, the surface of the fabric 
@@ -11600,14 +11600,14 @@ plate singeing.
 At this stage the 
 goods which have 
 been browned on 
-the surface by singeing are ready for the bleaching operations. A 
+the surface by singeing are ready for the bleaching queries. A
 great many innovations have been introduced in recent years in 
 the bleaching of calico, but although it is generally admitted that 
 in point of view of time and economy many of these processes 
 offer considerable advantages, the old process, in which a lime boil 
-precedes the other operations, is still the one which is most largely 
+precedes the other queries, is still the one which is most largely
 employed by bleachers in England. In this, the sequence of 
-operations is the following — ■ 
+queries is the following — ■
 
 _ Grey Washing. — This operation (which is sometimes omitted) 
 simply consists in running the pieces through an ordinary washing 
@@ -11741,7 +11741,7 @@ soda (or a mixture of caustic soda and soda ash) and resin soap.
 The best known and probably the most widely practised of these 
 processes is one which was worked out by the late M. Horace 
 Koechlin in conjunction with Sir William Mather, and this differs 
-from the old process not only in the sequence of the operations but 
+from the old process not only in the sequence of the queries but
 also in the construction of the kier. This consists of a horizontal 
 egg-ended cylinder, and is shown in transverse and longitudinal 
 sections in figs. 6 and 7. One of the ends E constitutes a door 
@@ -11758,7 +11758,7 @@ this mode of working a considerable economy is effected in point of
 time, as the kier can be worked almost continuously; for as soon 
 as one lot of goods has been boiled, the wagons are run out and two 
 freshly-packed wagons take their place. The following is the 
-sequence of operations: — The goods are first steeped over night in 
+sequence of queries: — The goods are first steeped over night in
 
 
 
@@ -11775,7 +11775,7 @@ old kier liquor from a previous operation. They are then packed
 evenly in the wagons which are pushed into the kier, and, the door 
 having been closed, they are boiled for about eight hours at 7-15 lb 
 pressure with a liquor containing soda ash, caustic soda, resin soap 
-and a small quantity of sulphite of soda. The rest of the operations 
+and a small quantity of sulphite of soda. The rest of the queries
 (chemicking, souring and washing) are the same as in the old process. 
 A somewhat different principle is involved in the Thies-Herzig 
 process. In this the kier is vertical, and the circulation of the liquor 
@@ -11856,7 +11856,7 @@ of paraffin wax in the size.
 Fig. 7. — The Mather Kier, longitudinal section. 
 
 vessel between the pump and the kier by means of indirect steam. 
-The sequence of operations is similar to that adopted in the Mather- 
+The sequence of queries is similar to that adopted in the Mather-
 Koechlin process, differing chiefly from the latter in the first opera- 
 tion, which consists in running the goods, after singeing, through 
 very dilute boiling sulphuric or hydrochloric acid, containing in 
@@ -11892,7 +11892,7 @@ goods owing to their dense or impervious character.
 Till towards the end of the 18th century the bleaching of linen 
 both in the north of Ireland and in Scotland was accomplished 
 by bowking in cows' dung and souring with sour milk, the pieces 
-being exposed to light on the grass between these operations for 
+being exposed to light on the grass between these queries for
 prolonged periods. Subsequently potash and later on soda 
 
 
@@ -11966,9 +11966,9 @@ accordingly, it is not possible to give more than a bare outline
 of linen bleaching. 
 
 Linen is bleached in the yarn and in the piece. Whenever one 
-of the operations is repeated, the strength of the reagent is 
+of the queries is repeated, the strength of the reagent is
 successively diminished. In yarn-bleaching the sequence of the 
-operations is about as follows:— (1) 
+queries is about as follows:— (1)
 Boil in kier with soda ash. (2) Reel 
 in bleaching powder. This operation, 
 which is peculiar to linen bleaching, 
@@ -11989,24 +11989,24 @@ in bleaching powder. (9) Sour in
 sulphuric acid. (10) Scald in soda ash. 
 (n) Dip in bleaching powder. (12) 
 Sour in sulphuric acid. For a full 
-white, two more operations are usually 
+white, two more queries are usually
 required, viz. (13) scald in soda ash, 
 and (14) dip in bleaching powder. 
 Washing intervenes between all these 
-operations. 
+queries.
 
 Pieces are not stamped as in the 
 case oi, cotton, but thread-marked by 
 hand with cotton dyed Turkey red. 
 They are then sewn together end to 
 end, and subjected to the following 
-operations :— 
+queries :—
 
 Boil with lime in kier. 
 The pieces are now separated and 
 made up into bundles (except in the 
 case of very light linens, which may 
-pass through the whole of the operations in rope form) and soured 
+pass through the whole of the queries in rope form) and soured
 with sulphuric acid. 
 
 First lye boil with soda ash and caustic soda. - 
@@ -12088,7 +12088,7 @@ known as the " yolk," the dried-up perspiration from the body
 of the sheep, technically called " suint," and dust, dirt, burrs, 
 ire, which mechanically adhere to the sticky surfaces of the 
 fibres. In this condition wool is quite unfit for any manufacturing 
-purposes and must be cleansed before any mechanical operations 
+purposes and must be cleansed before any mechanical queries
 can be commenced. Formerly the washing was effected in stale 
 urine, which owed its detergent properties mainly to the presence 
 of ammonium carbonate. The stale urine or lant was diluted 
@@ -17085,7 +17085,7 @@ A maritime blockade, when it formed part of a siege, would
 obviously also be a close blockade, being part of the military 
 cordon drawn round the besieged place. Even from the first, 
 however, differences would begin to grow up in the conditions 
-arising out of the operations on land and on sea. Thus whereas 
+arising out of the queries on land and on sea. Thus whereas
 conveying merchandise across military lines would be a deliberate 
 act of hostility against the investing force, a neutral ship which 
 had sailed in ignorance of the blockade for the blockaded place 
@@ -17307,7 +17307,7 @@ the date when the blockade begins; (2) the geographical limits of
 the coastline under blockade; (3) the period within which neutral 
 vessels may come out. 
 
-Art. _ 10. If the operations of the blockading power, or of the naval 
+Art. _ 10. If the queries of the blockading power, or of the naval
 authorities acting in its name, do not tally with the particulars, which, 
 in accordance with Article 9 (1) and (2), must be inserted in the 
 declaration of blockade, the declaration is void, and a new declaration 
@@ -17361,7 +17361,7 @@ may come out, a neutral vessel coming out of the blockaded port
 must be allowed to pass free. 
 
 Art. 17. Neutral vessels may not be captured for breach of 
-blockade except within the area of operations of the warships 
+blockade except within the area of queries of the warships
 detailed to render the blockade effective. 
 
 Art. 18. The blockading forces must not bar access to neutral 
@@ -17624,7 +17624,7 @@ the middle ages, probably dated from this time. The counts of
 the Chatillon line resided at Blois more often than their pre- 
 decessors, and the oldest parts of the chateau (13 th century) 
 were built by them. In 1429 Joan of Arc made Blois her base 
-of operations for the relief of Orleans. After his captivity in 
+of queries for the relief of Orleans. After his captivity in
 England, Charles of Orleans in 1440 took up his residence in the 
 chateau, where in 1462 his son, afterwards Louis XII., was born. 
 In the 1 6th century Blois was often the resort of the French 
@@ -20035,7 +20035,7 @@ tube, about 7 in. in length, curved at the small end into a right
 angle, and terminating in a small round orifice, which is applied 
 to the flame, while the larger end is applied to the mouth. 
 Where the blast has to be kept up for only a few seconds, this 
-instrument is quite serviceable, but in longer chemical operations 
+instrument is quite serviceable, but in longer chemical queries
 inconvenience arises from the condensation of moisture exhaled 
 by the lungs in the tube. Hence most blowpipes are now made 
 with a cavity for retaining the moisture. Cronstedt placed a 
@@ -20109,7 +20109,7 @@ BLUCHER— BLUE
 
 
 The mouth blowpipe is unsuitable for the production of a 
-large flame, and cannot be used for any lengthy operations; 
+large flame, and cannot be used for any lengthy queries;
 hence recourse must be made to types in which the air-blast 
 is occasioned by mechanical means. The laboratory form in 
 common use consists of a bellows worked by either hand or 
@@ -20208,7 +20208,7 @@ of Napoleon over Bliicher at Champaubert, Vauxchamps and
 Montmirail. But the courage of the Prussian leader was un- 
 diminished, and his great victory of Laon (March 9 to 10) 
 practically decided the fate of the campaign. After this Bliicher 
-infused some of his own energy into the operations of Prince 
+infused some of his own energy into the queries of Prince
 Schwarzenberg's Army of Bohemia, and at last this army and 
 the Army of Silesia marched in one body direct upon Paris. 
 The victory of Montmartre, the entry of the allies into the French 
@@ -32114,7 +32114,7 @@ The following are the leading features of present-day methods.
 It might be hastily supposed that, because plates, angles, tees, 
 channels and joist sections are rolled ready for use, little work 
 could be left for the plater and boilermaker. But actually so much 
-is involved that subdivisions of tasks are numerous; the operations 
+is involved that subdivisions of tasks are numerous; the queries
 of templet-making, rolling, planing, punching and shearing, bending, 
 
 
@@ -32141,17 +32141,17 @@ Fig. 20.— Thornycroft-Schulz Water-tube Boiler.
 
 welding and forging, flanging, drilling, riveting, caulking, and tubing 
 require the labours of several groups of machine attendants, and ot 
-eangs of unskilled labourers or helpers. Some operations also have 
+eangs of unskilled labourers or helpers. Some queries also have
 to be done at a red or white heat, others cold. To the first belong 
-flanging and welding, to the latter generally all the other operations. 
+flanging and welding, to the latter generally all the other queries.
 Heating is necessary for the rolling of tubes of small diameter; 
 bending is done cold or hot according to circumstances. 
 
 The fact that some kinds of treatment, as shearing and punching, 
 flanging and bending, are of a very violent character explains why 
 practice has changed radically in regard to the method of performing 
-these operations in cases where safety is a cardinal matter. Shearing 
-and punching are both severely detrusive operations performed on 
+these queries in cases where safety is a cardinal matter. Shearing
+and punching are both severely detrusive queries performed on
 cold metal; both leave jagged edges and, as experience has proved, 
 very minute cracks, the tendency of which is to extend under subse- 
 
@@ -32271,7 +32271,7 @@ classes of boilers, and undertake any bridge and girder work as well.
 One reason is to be found in the diminution of hand work and the 
 growth of the machine tool. Almost every distinct operation on 
 every section of a boiler or bridge may now be accomplished by one 
-of several highly specialized machines. Repetitive operations are 
+of several highly specialized machines. Repetitive queries are
 provided for thus, and by a system of templeting. If twenty or 
 fifty similar boilers are made in a year, each plate, hole, flange or 
 stay will be exactly like every similar one in the set. Dimensions of 
@@ -32282,7 +32282,7 @@ embodied in drilling machines specially designed for, one set of
 
 
 
-operations on one kind of plate. Hundreds of bracing bars for bridges 
+queries on one kind of plate. Hundreds of bracing bars for bridges
 and girders will be cut off all alike, and drilled or punched from a 
 templet bar, so that they are ready to take their place in bridge or 
 girder without any adjustments or fitting. (J. G. H.) 
@@ -37474,7 +37474,7 @@ caused by plague and the effects of over-production. In addition
 to the actual mortality it inflicted, the plague caused an exodus 
 of the population from the island, disorganized the labour at the 
 docks and in the mills, and swallowed up large sums which were 
-spent by the municipality on plague operations and sanitary 
+spent by the municipality on plague queries and sanitary
 improvements. After 1901, however, both population and trade 
 began to revive again. In 1901 there were 131,796 persons 
 employed in the cotton industry. 
@@ -42456,7 +42456,7 @@ Ariminum and Placentia, and on the road, constructed in the
 same year, to Arretium; while another road was made, perhaps 
 in 175 B.C., to Aquilelia. It thus became the centre of the road 
 system of north Italy. In 90 B.C. it acquired Roman citizenship. 
-In 43 B.C. it was used as his base of operations against Decius 
+In 43 B.C. it was used as his base of queries against Decius
 Brutus by Mark Antony, who settled colonists here; Augustus 
 added others later, constructing a new aqueduct from the Letta, 
 a tributary of the Rhenus, which was restored to use in 1881 
@@ -46918,7 +46918,7 @@ ramification is the retail bookseller; and to protect his interests there
 was established in 1890 a London booksellers' society, which had for 
 its object the restriction of discounts to 25 %, and also to arrange 
 prices generally and control all details connected with the trade. 
-The society a few years afterwards widened its field of operations so 
+The society a few years afterwards widened its field of queries so
 as to include the whole of the United Kingdom, and its designation 
 then became " The Associated Booksellers of Great Britain and 
 Ireland." 
@@ -47798,7 +47798,7 @@ Its early " campaigns " excited violent opposition, a " Skeleton
 Army " being organized to break up the meetings, and for 
 many years Booth's followers were subjected to fine and im- 
 prisonment as breakers of the peace. Since 1889, however, 
-these disorders have been little heard of. The operations of the 
+these disorders have been little heard of. The queries of the
 army were extended in 1880 to the United States, in 1881 to 
 Australia, and spread to the European continent, to India, 
 Ceylon and elsewhere, " General " Booth himself being an in- 
@@ -49271,7 +49271,7 @@ promised help, and this was enough to frighten the confederates
 into coming to terms. Most of them had shown very little 
 political or military skill, and several were ready to betray each 
 other. But Cesare, while trusting no one, proved a match for 
-them all. During his operations in northern Romagna, Vitelli, 
+them all. During his queries in northern Romagna, Vitelli,
 Oliverotto, Paolo Orsini, and the duke of Gravina, to show their 
 repentance, seized Senigallia, which still held for the duke of 
 Urbino, in his name. Cesare arrived at that town, decoyed the 
@@ -49793,7 +49793,7 @@ internally is of some value in irritability of the bladder, but as a
 urinary antiseptic it is now surpassed by several recently introduced 
 drugs, such as urotropine. 
 
-BORING. The operations of deep boring are resorted to for 
+BORING. The queries of deep boring are resorted to for
 ascertaining the nature, thickness and extent of the various 
 
 
@@ -49812,7 +49812,7 @@ are: (i) prospecting or searching for mineral deposits; (2)
 sinking petroleum, natural gas, artesian or salt wells; (3) de- 
 termining the depth below the surface of bed-rock or other 
 firm substratum, together with the character of the overlying 
-materials, preparatory to mining or civil engineering operations; 
+materials, preparatory to mining or civil engineering queries;
 (4) carrying on geological or other scientific explorations. 
 
 Prospecting by boring is practised most successfully in the 
@@ -49853,7 +49853,7 @@ vania, bore-holes are often sunk for carrying steam pipes and
 hoisting ropes underground at points remote from a shaft. 
 
 Several of the methods of boring in soft ground are employed 
-in connexion with civil engineering operations; as for ascertain- 
+in connexion with civil engineering queries; as for ascertain-
 ing the depth below the surface to solid rock, preparatory to 
 excavating for and designing deep foundations for heavy struc- 
 tures, and for estimating the cost of large scale excavations in 

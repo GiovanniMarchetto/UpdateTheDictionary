@@ -1,4 +1,4 @@
-package miscellaneous;
+package operations;
 
 import java.util.ArrayList;
 

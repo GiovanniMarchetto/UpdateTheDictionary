@@ -1,4 +1,4 @@
-package operations;
+package queries;
 
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;

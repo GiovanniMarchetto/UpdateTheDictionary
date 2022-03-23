@@ -1,16 +1,16 @@
 package dataStructure;
 
 import miscellaneous.Miscellaneous;
-import miscellaneous.Normalization;
-import miscellaneous.StopWord;
-import miscellaneous.Tokenization;
+import operations.Normalization;
+import operations.StopWord;
+import operations.Tokenization;
 
 import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static miscellaneous.StopWord.StopWordSize;
-import static miscellaneous.StopWord.setStopWordList;
+import static operations.StopWord.StopWordSize;
+import static operations.StopWord.setStopWordList;
 
 public class Dictionary implements Serializable {
 

@@ -3,9 +3,9 @@ import dataStructure.PostingList;
 import miscellaneous.Miscellaneous;
 import miscellaneous.QueryMode;
 import miscellaneous.SaveReadPersistentDictionary;
-import miscellaneous.Tokenization;
-import operations.BooleanQueries;
-import operations.PhrasalQueries;
+import operations.Tokenization;
+import queries.BooleanQueries;
+import queries.PhrasalQueries;
 
 import java.util.ArrayList;
 import java.util.Objects;

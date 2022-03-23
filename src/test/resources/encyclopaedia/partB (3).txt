@@ -608,7 +608,7 @@ BREWING
 
 
 BREWING, in the modern acceptation of the term, a series 
-of operations the object of which is to prepare an alcoholic 
+of queries the object of which is to prepare an alcoholic
 beverage of a certain kind — to wit, beer — mainly from cereals 
 (chiefly malted barley), hops and water. Although the art of 
 preparing beer (q.v.) or ale is a very ancient one, there is very 
@@ -642,7 +642,7 @@ and for others reasons) that it was more economical and less
 troublesome to have their beer brewed for them at a regular 
 brewery. The usual charge was 30s. per barrel for bitter ale, 
 and 8s. or so for small beer. This tendency to centralize brewing 
-operations became more and more marked with each succeeding 
+queries became more and more marked with each succeeding
 decade. Thus during 1895-1905 the number of private brewers 
 declined from 17,041 to 9930. Of the private brewers still exist- 
 ing, about four-fifths were in the class exempted from beer duty, 
@@ -812,7 +812,7 @@ By the new act, licences at the annual duty of £1 on brewers for sale,
 and of 6s. (subsequently modified by 44 Vict. c. 12, and 48 and 49 
 Vict. c. 5, &c, to 4s.) or 9s., as the case might be, on any other 
 brewers, were required. The regulations dealing with the mashing 
-operations are very stringent. Twenty-four hours at least before 
+queries are very stringent. Twenty-four hours at least before
 mashing the brewer must enter in his brewing book (provided by the 
 Inland Revenue) the day and hour for commencing to mash malt, 
 corn, &c, or to dissolve sugar; and the date of making such entry; 
@@ -1184,7 +1184,7 @@ enzyme or ferment (see below, under Mashing) of malted barley
 is present in that material in great excess, and a part of this 
 surplus energy may be usefully employed in converting the 
 starch of unmalted grain into sugar. The brewer has found 
-also that brewing operations are simplified and accelerated by 
+also that brewing queries are simplified and accelerated by
 the use of a certain proportion of substitutes, and that he is 
 thereby enabled appreciably to increase his turn-over, i.e. he can 
 make more beer in a given time from the same plant. Certain 
@@ -1291,7 +1291,7 @@ and shortens the brewing time. The preservatives mostly used
 are the bisulphites of lime and potash, and these, when employed 
 in small quantities, are generally held to be harmless. 
 
-Brewing Operations. — The general scheme of operations in an 
+Brewing Operations. — The general scheme of queries in an
 English brewery will be readily understood if reference be made 
 to fig. 1, which represents an 8-quarter brewery on the gravitation 
 system, the principle of which is that all materials to be employed 
@@ -1730,7 +1730,7 @@ man-hole and a valve. These squares are built of stone and kept
 very cool. At the end of the fermentation the yeast (after closing 
 the man-hole) is removed from the top square. 
 
-Racking, &c. — After the fermentation and cleansing operations 
+Racking, &c. — After the fermentation and cleansing queries
 are completed, the beer is racked off (sometimes after passing a few 
 hours in a settling tank) into storage vessels or trade casks. The 
 finest " stock " and " pale " ales are stored from ,six weeks to three 
@@ -1898,7 +1898,7 @@ where secondary fermentation, lasting three weeks, takes place.
 The gases evolved are allowed to collect under pressure, so that 
 the beer is thoroughly charged with the carbonic acid necessary 
 to give it condition. Finally the beer is again cooled, filtered, 
-racked and bottled, the whole of these operations taking place 
+racked and bottled, the whole of these queries taking place
 under counter pressure, so that no gas can escape; indeed, from 
 the time the wort leaves the copper to the moment when it is 
 bottled in the shape of beer, it does not come into contact with 
@@ -1933,7 +1933,7 @@ belong for the most part to physiological chemistry, whilst those
 of the cognate industry, malting, are governed exclusively by 
 that branch of knowledge. Alike in following the growth of 
 barley in field, its harvesting, maturing and conversion into 
-malt, as well as the operations of mashing malt, fermenting 
+malt, as well as the queries of mashing malt, fermenting
 wort, and conditioning beer, physiological chemistry is needed. 
 On the other hand, the consideration of the saline matter in 
 waters, the composition of the extract of worts and beers, and 
@@ -2002,7 +2002,7 @@ interest, as it offers a rational and consistent explanation of the
 phenomena known to accompany the transformation of starch by 
 diastase, and even if not strictly correct it has, at any rate, proved 
 itself to be a practical working hypothesis, by which the mashing 
-and fermenting operations may be regulated and controlled. Accord- 
+and fermenting queries may be regulated and controlled. Accord-
 ing to Brown and Morris, the starch molecule consists of five amylin 
 groups, each of which corresponds to the molecular formula 
 (Cr2H 20 Oio)2o. Four of these amylin radicles are grouped centrally 
@@ -7459,7 +7459,7 @@ Fig. 28. — Arch of Bridge at Coblenz.
 road to pass between the springings and ensured the transmission 
 of the wind stresses to the abutments without interrupting the cross- 
 bracing. Wire cables were used in the erection, by which the 
-members were lifted from barges and assembled, the operations being 
+members were lifted from barges and assembled, the queries being
 conducted from the side piers. 
 
 The Niagara Falls and Clifton steel arch (fig. 32) replaces the older 
@@ -7968,14 +7968,14 @@ shore, lifted by pontoons, floated out to their position between the
 Ciers, and lastly lifted into place by hydraulic presses. The Moerdyk 
 ridge in Holland, with 14 spans of 328 ft., was erected in a similar 
 way. The convenience of erecting girders on shore is very great, 
-but there is some risk in the floating operations and a good deal of 
+but there is some risk in the floating queries and a good deal of
 hauling plant is required. 
 
 (3) If a bridge consists of girders continuous over two or more 
 spans, it may be put together on the embankment at one end and 
 rolled over the piers. In some cases hauling tackle is used, in others 
 power is applied by levers and ratchets to the rollers on which the 
-girders travel. In such rolling operations the girder is subjected 
+girders travel. In such rolling queries the girder is subjected
 to straining actions different from those which it is intended to resist, 
 and parts intended for tension may be in compression; hence it 
 may need to be stiffened by timber during rolling. The bending 
@@ -11656,7 +11656,7 @@ he became K.B. in the following year, and on the occasion of
 the Spanish armament in 1790 flew his flag again for a short time. 
 On the outbreak of the war with France in 1793 Sir Alexander 
 Hood once more went to sea, this time as Howe's second in 
-command, and he had. his share in the operations which cul- 
+command, and he had. his share in the queries which cul-
 minated in the " Glorious First of June," and for his services 
 was made Baron Bridport of Cricket St Thomas in Somerset 
 
@@ -15560,7 +15560,7 @@ Septimius Severus, the ablest emperor of his age, could turn his
 attention to the island. He came thither in person, invaded 
 Caledonia, commenced the reconstruction of the wall of Hadrian, 
 rebuilding it from end to end in stone, and then in the fourth 
-year of his operations died at York. Amid much that is un- 
+year of his queries died at York. Amid much that is un-
 certain and even legendary about his work in Britain, this is 
 plain, that he fixed on the line of Hadrian's wall as his substan- 
 tive 'frontier. His successors, Caracalla and Severus Alexander 
@@ -17742,7 +17742,7 @@ of the country, which was not terminated until the year 1896.
 The African Lakes Corporation in its unofficial war enlisted 
 volunteers, amongst whom were Captain (afterwards Sir F. D.) 
 Lugard and Mr (afterwards Sir) Alfred Sharpe. Both these 
-gentlemen were wounded, and the operations they undertook 
+gentlemen were wounded, and the queries they undertook
 were not crowned with complete success. In 1 889 Mr (afterwards 
 Sir ) H. H. Johnston was sent out to endeavour to effect a possible 
 arrangement of the dispute between the Arabs and the African 
@@ -19076,7 +19076,7 @@ behind Mombasa; and in May 1887 Bargash granted to an
 association formed by Mackinnon a concession for the adminis- 
 tration of so much of his mainland territory as lay outside the 
 region which the' British government had recognized as the 
-German sphere of operations. By, international agreement the 
+German sphere of queries. By, international agreement the
 mainland territories of the sultan were defined as extending 10 m. 
 inland from the coast. Mackinnon's association, whose object 
 A char- was t0 °P en U P the hinterland as well' as this ten-mile 
@@ -19097,14 +19097,14 @@ British. This, outbreak led to a joint British -aiad .German
 
 
 
-blockade, which seriously hampered trade operations. It had 
+blockade, which seriously hampered trade queries. It had
 also been anticipated, in reliance on certain assurances of Prince 
 Bismarck, emphasized by Lord Salisbury, that German enterprise 
 in the interior of the country would be confined to the south 
 of Victoria Nyanea. Unfortunately this expectation was not 
 realized. Moreover German subjects put forward claims to 
 coast districts, notably Lamu, within the company's sphere and 
-in many ways obstructed the company's operations. In all these 
+in many ways obstructed the company's queries. In all these
 disputes the German government countenanced its own subjects, 
 while the British foreign office did little or nothing to assist the 
 company, sometimes directly discouraging its activity. Moreover, 
@@ -26507,7 +26507,7 @@ was lying ill with dysentery. He visited twice the capital of the
 sultan of Sala, and concluded a treaty with him, which had for 
 one of its objects the expulsion of the sea-gypsies and other 
 tribes from his dominions. In 1851 grave charges with respect 
-to the operations in Borneo were brought against Sir James 
+to the queries in Borneo were brought against Sir James
 Brooke in the House of Commons by Joseph Hume and other 
 members, especially as to the " head-money " received. To 
 meet these accusations, and to vindicate his proceedings, he 
@@ -28834,7 +28834,7 @@ he was commissioned brigadier-general in the regular army, and
 
 in January 1814 he was promoted major-general and succeeded 
 General James Wilkinson in command of the forces at Niagara. 
-Early in the summer of 18 14 he undertook offensive operations, 
+Early in the summer of 18 14 he undertook offensive queries,
 and his forces occupied Fort Erie, and, on the 5th of July, at 
 Chippawa, Ontario, defeated the British under General Phineas 
 Riall (c. 1769-1851). On the 25th of July, with General Winfield 
@@ -29796,7 +29796,7 @@ in the snow with his men, and Carlyle records that private
 soldiers made rough shelters over him as he slept. He actually 
 reached the Elbe at Schandau, but as the Saxons were unable 
 to break out Browne retired, having succeeded, however, in 
-delaying the development of Frederick's operations for a whole 
+delaying the development of Frederick's queries for a whole
 campaign. In the campaign of 1757 he voluntarily served under 
 Prince Charles of Lorraine (q.v.) who was made commander- 
 in-chief, and on the 6th of May in that year, while leading a 
@@ -31464,7 +31464,7 @@ during the bombardment. In 1859 Brownsville was captured
 by a band of Mexican raiders under Juan Nepomuceno Cortina. 
 During the Civil War, until its temporary occupation by Federal 
 forces in 1863, and subsequent effective blockade, it was an 
-active centre of operations of Confederate blockade runners. 
+active centre of queries of Confederate blockade runners.
 At Palmetto Ranch, near the battlefield of Palo Alto, took place 
 (13th of May 1865), more than a month after General Lee's 
 surrender,the last engagement between Federal and Confederate 
@@ -32715,7 +32715,7 @@ BRUNELLESCHI— BRUNETIERE
 
 
 
-performing its part in a long series of operations. Not only was 
+performing its part in a long series of queries. Not only was
 the quality of the product much improved but the cost was 
 greatly diminished, and the saving effected in the first year in 
 which the machines were in full work was estimated at £24,000, 
@@ -37347,7 +37347,7 @@ surprised and partly dispersed by the arrival of a Spanish fleet of
 thirty-nine sail. But on the departure of the fleet the scattered 
 bands returned, and encouragement was given to their country- 
 men in Santo Domingo. For buccaneering had now become a 
-most profitable employment, operations were extended, and a 
+most profitable employment, queries were extended, and a
 storehouse secure from the attacks of the Spaniards was required. 
 The small island of Tortuga (north-west of Hispaniola) was seized 
 for this purpose in 1630, converted into a magazine for the goods 
@@ -37406,7 +37406,7 @@ these extends from the period of their rise to the capture of
 Panama by Morgan in 167 1, during which time they were 
 hampered neither by government aid nor, till near its close, by 
 government restriction. The second, from 1671 to the time of 
-their greatest power, 1685, when the scene of their operations was 
+their greatest power, 1685, when the scene of their queries was
 no longer merely the Caribbean, but principally the whole range 
 of the Pacific from California to Chile. The third and last period 
 extends from that year onwards; it was a time of disunion and 
@@ -37628,7 +37628,7 @@ their suddenly acquired gains.
 Settled labour, the warrant of real wealth, was unacceptable 
 to those who lived by promoting its insecurity. Regular trade — 
 though rendered attractive by smuggling — and pearl gathering 
-and similar operations which were spiced with risk, were open in 
+and similar queries which were spiced with risk, were open in
 vain to them, and in the absence of any domestic life, a hand-to- 
 mouth system of supply and demand rooted out gradually the 
 prudence which accompanies any mode of settled existence. 
@@ -39245,8 +39245,8 @@ Buckeridge in 1629.
 
 BUCKETSHOP, a slang financial term for the office or business 
 of an inferior class of stockbroker, who is not a member of an 
-official exchange and conducts speculative operations for his 
-clients, who deposit a margin or cover. The operations consist, 
+official exchange and conducts speculative queries for his
+clients, who deposit a margin or cover. The queries consist,
 as a rule, of a simple bet or wager between the broker and client, 
 no pretence of an actual purchase or sale being attempted. The 
 term is sometimes, though loosely and wrongfully, applied to 
@@ -39796,7 +39796,7 @@ Buckingham sailed from Portsmouth at the head of a numerous
 fleet, and a considerable land force, to relieve the besieged city. 
 
 His first enterprise was the siege of the fort of St Martin's, 
-on the Isle of Re. The ground was hard, and the siege operations 
+on the Isle of Re. The ground was hard, and the siege queries
 were converted into a blockade. On the 27 th of September 
 the defenders of the fort announced their readiness to surrender 
 the next morning. In the night a fresh gale brought over a 
@@ -44849,7 +44849,7 @@ by way of Panama, also sent a stream of contraband metal from
 Charcas to Buenos Aires, where it found eager buyers among the 
 Portuguese traders from Brazil, who even founded the town of 
 Colonia on the opposite bank of the estuary to facilitate their 
-hazardous traffic. In time the magnitude of these operations 
+hazardous traffic. In time the magnitude of these queries
 attracted attention at Madrid and efforts were made to suppress 
 them, but without complete success until more liberal provisions 
 were made to promote trade between Spain and her colonies. 
@@ -45146,7 +45146,7 @@ which, however, was burned in the same year. In 1687 marquis
 de Denonville built at the mouth of the river a fort which was 
 named in his honour and was the predecessor of the fortifications 
 on or near the same site successively called Fort Niagara; and 
-the neighbourhood was the scene of military operations up to 
+the neighbourhood was the scene of military queries up to
 the close of the War of Independence. As early as 1784 the 
 present site of the city of Buffalo came to be known as " the 
 Buffalo Creek region " either from the herds of buffalo or bison 
@@ -45167,7 +45167,7 @@ popular; the village became the county-seat of Niagara county
 in 1808, and two years later the town of Buffalo was erected. 
 Upon the outbreak of the second war with Great Britain, Buffalo 
 and the region about Niagara Falls became a centre of active 
-military operations; directly across the Niagara river was the 
+military queries; directly across the Niagara river was the
 British Fort Erie. It was from Buffalo that Lieutenant Jesse D. 
 Elliott (1782-1845) made his brilliant capture of the " Detroit " 
 and " Caledonia " in October 1812; and on the 30th and 31st 

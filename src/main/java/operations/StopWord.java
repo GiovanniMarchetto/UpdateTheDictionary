@@ -1,4 +1,6 @@
-package miscellaneous;
+package operations;
+
+import miscellaneous.Miscellaneous;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,7 +1,10 @@
 package miscellaneous;
 
-import operations.BooleanQueryTest;
+import operations.Normalization;
+import operations.StopWord;
+import operations.Tokenization;
 import org.junit.jupiter.api.Test;
+import queries.BooleanQueryTest;
 
 import java.util.ArrayList;
 

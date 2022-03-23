@@ -1,9 +1,9 @@
-package operations;
+package queries;
 
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
-import miscellaneous.StopWord;
-import miscellaneous.Tokenization;
+import operations.StopWord;
+import operations.Tokenization;
 
 import java.util.ArrayList;
 import java.util.Set;

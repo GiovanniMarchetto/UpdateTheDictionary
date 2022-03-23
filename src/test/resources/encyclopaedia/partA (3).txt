@@ -3875,7 +3875,7 @@ The real order of Aristotle's philosophy is that of Aristotle's
 mind, revealed in his writings, and by the general view of think- 
 ing, science, philosophy and all learning therein contained. He 
 classified thinking (Met. E 1) and science (Topics, vi. 6) by the 
-three operations of speculation (deuipia), practice (-n-paijis) and 
+three queries of speculation (deuipia), practice (-n-paijis) and
 production (woiqcns} , and made the following subdivisions: — 
 
 I. Speculative: about things; subdivided (Met. E 1; 
@@ -6042,7 +6042,7 @@ arithmetic and in algebra respectively; what' is an equality in
 the former becoming an identity in the latter. Thus the state- 
 ment that 4 times 3 is equal to 3 times 4, or, in abbreviated form, 
 4X3 = 3X4(1 28), is a statement not of identity but of equality; 
-i.e. 4X3 and 3X4 mean different things, but the operations 
+i.e. 4X3 and 3X4 mean different things, but the queries
 which they denote produce the same result. But in algebra a X b =*= 
 bXa is called an identity, in the sense that it is true whatever a 
 and b may be; while »XX=A is called an equation, as being 
@@ -6054,7 +6054,7 @@ equal.
 tion between an identity and an equality often leads to loose 
 reasoning; and in order to prevent this it is important that 
 definite meanings should be attached to all symbols of operation, 
-and especially to those which represent elementary operations. 
+and especially to those which represent elementary queries.
 The symbols - and -5- mean respectively that the first quantity 
 mentioned is to be reduced or divided by the second; but there 
 is some vagueness about + and X. In the present article a+b 
@@ -6174,9 +6174,9 @@ minimized by using the notation explained in § 17.
 
 33. Multiplication and Division are the names given to certain 
 numerical processes which have to be performed in order to 
-find the result of certain arithmetical operations. Each process 
-may arise out of either of two distinct operations; but the 
-terminology is based on the processes, not on the operations 
+find the result of certain arithmetical queries. Each process
+may arise out of either of two distinct queries; but the
+terminology is based on the processes, not on the queries
 to which they belong, and the latter are not always clearly 
 understood. 
 
@@ -6485,9 +6485,9 @@ a unit for the purpose of another multiplication; and so on
 indefinitely. Similarly where multiplication has arisen out of the 
 subdivision of a unit into smaller units, we can again subdivide 
 these smaller units. Thus we get successive multiplication; but 
-it represents quite different operations according as it is due to 
+it represents quite different queries according as it is due to
 repetition, in the sense of § 34, or to subdivision, and these 
-operations will be exhibited by different diagrams. Of the two 
+queries will be exhibited by different diagrams. Of the two
 diagrams below, A exhibits the successive multiplication of £3 by 
 20, 12 and 4, and B the successive reduction of £3 to shillings, 
 pence and farthings. The principle on which the diagrams are 
@@ -7299,7 +7299,7 @@ ARITHMETIC
 
 (ii) Associative Law for Additions and Subtractions. — This law 
 includes the rule of signs, that a—(b—c) = a — b+c; and it states 
-that, subject to this, successive operations of addition or sub- 
+that, subject to this, successive queries of addition or sub-
 traction may be grouped in sets in any way; e.g.a— b+c+d+e — f 
 = a-{b-c) + {d+e-f). 
 
@@ -7310,7 +7310,7 @@ a — b+c+d = a+c — b+d = a+d+c — b.
 (iv) Associative Law for Multiplications and Divisions. — This 
 law includes a rule, similar to the rule of signs, to the effect that 
 a-7-{b-i-c)=a J hbxc; and it states that, subject to this, successive 
-operations of multiplication or division may be grouped in sets in 
+queries of multiplication or division may be grouped in sets in
 any way; e.g. a-i-bxcxdxe-i-f=a-i-{b- : rc)x(dxe-i-f). 
 
 (v) Commutative Law for Multiplications and Divisions, that 
@@ -7382,7 +7382,7 @@ o
 
 
 
-with the " negative numbers ": with which operations are per- 
+with the " negative numbers ": with which queries are per-
 formed in formal algebra. 
 
 The positive quantity or number obtained from a negative 
@@ -7415,7 +7415,7 @@ Hence, so long as the denominator remains unaltered, we can
 
 deal with *, $■, — , ... exactly as if they were numbers, any 
 
-operations being performed on the numerators. The expressions 
+queries being performed on the numerators. The expressions
 
 £ 1 L are then fractional numbers, their relation to 
 
@@ -7597,7 +7597,7 @@ means the same thing as " \ times A."
 addition or subtraction, with fractions which have different 
 denominators, it is necessary to reduce them to a common 
 denominator. To avoid this difficulty, in practical life, it is usual 
-to confine our operations to fractions which have a certain 
+to confine our queries to fractions which have a certain
 standard denominator. Thus (§ 79) the Romans reckoned in 
 twelfths, and the Babylonians in sixtieths; the former method 
 supplied a basis for division by 2, 3, 4, 6 or 12, and the latter for 
@@ -7883,7 +7883,7 @@ VII. Approximation
 
 81. Approximate Character of Numbers. — The numbers 
 (integral or decimal) by which we represent the results of arith- 
-metical operations are often only approximately correct. All 
+metical queries are often only approximately correct. All
 numbers, for instance, which represent physical measurements,are 
 limited in their accuracy not only by our powers of measurement 
 but also by the accuracy of the measure we use as our unit. Also 
@@ -7907,7 +7907,7 @@ instance, calculate the exact cost of 3 ft 5 oz. of meat at o|d.
 a ft, but there are no coins in which we could pay this exact 
 amount. 
 
-When the result of any arithmetical operation or operations 
+When the result of any arithmetical operation or queries
 is represented approximately but not exactly by a number, 
 the excess (positive or negative) of this number over the 
 number which would express the result exactly is called the 
@@ -7958,7 +7958,7 @@ the number as stated. Thus ^=-143=== -0005 can be written
 i = - 143(1 ± -?l«-)- 
 
 83. Accuracy after Arithmetical Operations. — If the numbers 
-which are the subject of operations are not all exact, the accuracy 
+which are the subject of queries are not all exact, the accuracy
 of the result requires special investigation in each case. 
 
 Additions and subtractions are simple. If, for instance, the 
@@ -8566,7 +8566,7 @@ XI. Methods of Calculation
 (i.)' Exact Calculation. 
 
 95. Working from Left. — It is desirable, wherever possible, to 
-perform operations on numbers or numerical quantities from 
+perform queries on numbers or numerical quantities from
 the left, rather than from the right. There are several reasons 
 for this. In the first place, an operation then corresponds more 
 closely, at an elementary stage, with the concrete process which it 
@@ -8578,7 +8578,7 @@ once on the larger, and therefore more important, parts of the
 quantities concerned, and thus prevents arithmetical processes 
 from becoming too abstract in character. In the third place, it is 
 a better preparation for dealing with approximate calculations. 
-Finally, experience shows that certain operations in which the 
+Finally, experience shows that certain queries in which the
 result is written down at once — e.g. addition or subtraction of 
 two numbers or quantities, and multiplication by some small 
 numbers — are with a little practice performed more quickly and 
@@ -11665,7 +11665,7 @@ characteristic of its entire course below the mountains.
 
 Up to the 30th of June 1907 the government -of the United 
 States expended $2,384,557 on improvements along the Arkansas. 
-Almost half of this sum was required for snagging operations 
+Almost half of this sum was required for snagging queries
 alone. There is a considerable traffic on the river within the 
 borders of Arkansas in miscellaneous freights, and a slight 
 passenger movement. The river is rarely navigable above Fort 
@@ -12752,7 +12752,7 @@ of the house belonging to the free grammar school at Preston.
 This invention having been brought to a fairly advanced stage, 
 he removed to Nottingham in 1768, accompanied by Kay and 
 John Smalley of Preston, and there erected his first spinning 
-mill, which was worked by horses. But his operations were at 
+mill, which was worked by horses. But his queries were at
 first greatly fettered by want of capital, until Jedediah Strutt 
 (q.v.) , having satisfied himself of the value of the machines, entered 
 with his partner, Samuel Need, into partnership with him, and 
@@ -13186,7 +13186,7 @@ same year, and was a member of the inner cabinet which was
 almost immediately formed. In 1681 he was made lord lieutenant 
 of Suffolk. He died on the 28th of July 1685, and was buried at 
 Euston, where he had bought a large estate and had carried out 
-extensive building operations. His residence in London wasGoring 
+extensive building queries. His residence in London wasGoring
 House, on the site of which was built the present Arlington Street. 
 
 Arlington was a typical statesman of the Restoration, possess- 
@@ -16158,7 +16158,7 @@ ARMISTICE (from Lat. arma, arms, and sistere, to stop), a
 suspension of hostilities by mutual agreement between two 
 nations at war, or their respective forces. An armistice may be 
 either general or particular; in the first case there is a complete 
-cessation of hostile operations in every part of the dominions of 
+cessation of hostile queries in every part of the dominions of
 the belligerent powers; in the second there is merely a temporary 
 truce between two contending armies, or between a besieged 
 fortress and the force besieging it. Such a temporary truce, when 
@@ -16182,14 +16182,14 @@ he could have done in time of peace For example, he can raise
 troops, collect stores, receive reinforcements and fortify places 
 that are not actually in a state of siege. (2) Neither party can 
 take advantage of the armistice to do what he could not have 
-done had military operations continued. Thus he cannot throw 
+done had military queries continued. Thus he cannot throw
 provisions or reinforcements into a besieged town, and neither 
 besiegers nor besieged are at liberty to repair their fortifications 
 or erect new works. (3) All things contained in places the 
 possession of which was contested, must remain in the state 
 in which they were before the armistice began. Any infringe- 
 ment by either party of the conditions of the truce entitles 
-the other to recommence hostile operations without previous 
+the other to recommence hostile queries without previous
 intimation. 
 
 ARMOIRE, the French name (cf. Almery) given to a tall 
@@ -19118,7 +19118,7 @@ necessary adjunct to Hellenistic armies.
 8. Carthage. — The military systems of the Jews present few 
 features of unusual interest. The expedient of calling out 
 successive contingents from the different tribes, in order to ensure 
-continuity in military operations, should, however, be noticed. 
+continuity in military queries, should, however, be noticed.
 David and Solomon possessed numerous permanent troops 
 which served as guards and garrisons; in principle this organ- 
 ization was identical with that of the Persians, and that of 
@@ -19913,7 +19913,7 @@ system of the Landsknechts.
 system, which was gradually evolved by the patriots in the long 
 War of Independence, was its minute attention to detail. In 
 the first years of the war, William the Silent had to depend, 
-for field operations, on mutinous and inefficient mercenaries 
+for field queries, on mutinous and inefficient mercenaries
 and on raw countrymen who had nothing but devotion to oppose 
 to the discipline and skill of the best regular army in the world. 
 Such troops were, from the point of view of soldiers like Alva, 
@@ -20090,7 +20090,7 @@ expression of a national conscience had appeared rarely indeed
 in the Thirty Years' War, which was a means of livelihood for, 
 rather than an assertion of principle by, those who engaged in it. 
 In England, on the other hand, there were no mercenaries, and 
-the whole character of the operations was settled by the burning 
+the whole character of the queries was settled by the burning
 desire of a true " nation in arms " to decide at once, by the 
 arbitrament of battle, the vital points at issue. A German 
 critic (Fritz Hoenig) has indicated Worcester as the prototype 
@@ -20310,7 +20310,7 @@ Committee of Public Safety, met the disciplined formalists with
 an opposition before which the attack completely collapsed. It 
 was less marvellous in fact than in appearance that this should 
 be so. Not to mention the influence of pedantry and senility 
-on the course of the operations, it may be admitted that Frederick 
+on the course of the queries, it may be admitted that Frederick
 and his army at their best would have been unable to accomplish 
 the downfall of the now thoroughly roused French. Tactically, 
 the fire of the regulars' line caused the Revolutionary levies to 
@@ -20684,7 +20684,7 @@ Japanese army had formed itself, and still more the first illustra-
 tion of the new moral force of nationalities as the decisive 
 factor. The form of armies remained unaltered. Neither the 
 events of the Boer War of 1890-1902 nor the Manchurian 
-operations were held by European soldiers to warrant any 
+queries were held by European soldiers to warrant any
 serious modifications in organization. It is to the moral force 
 alluded to above, rather than to mere technical improvements, 
 that the best soldiers of Europe, and notably those of the French 
@@ -20829,7 +20829,7 @@ resultant advantage over an army of the ordinary type has been
 stated to be as high as 30 %. At all events, we need only examine 
 military history to find that with conscript armies wholesale 
 shirking is far from unknown. That loss from this cause does 
-not paralyse operations as it paralysed those of the 18th century. 
+not paralyse queries as it paralysed those of the 18th century.
 
 
 
@@ -21151,7 +21151,7 @@ is regarded by many as the fighting unit of the 20th, as the corps
 was that of the 19th century. In Europe there is even a tendency 
 to substitute the ancient phrase " reserve artillery " for " corps 
 artillery," showing that the role to be played by the corps 
-batteries is subordinated to the operations of the masses of divi- 
+batteries is subordinated to the queries of the masses of divi-
 sional artillery, the whole being subject, of course, to the technical 
 supervision of the artillery general officer who accompanies 
 the corps headquarters. Thus limited, the army corps has now 
@@ -21221,11 +21221,11 @@ mand, which would be exercised by the minister of war in Paris.
 The German system, on the other hand, is based upon the leader- 
 ship of the national forces by the sovereign in person, and even 
 though the headquarters of the " supreme war lord " (fiber ste 
-Kriegsherr) are actually in the field in one theatre of operations, 
+Kriegsherr) are actually in the field in one theatre of queries,
 he directs the movements of the German armies in all quarters. 
 Similarly, in 1864, General Grant accompanied and controlled 
 as a " group " the Armies of the Potomac and the James, 
-supervising at the same time the operations of other groups and 
+supervising at the same time the queries of other groups and
 armies. In the same campaign a subordinate general, Sherman, 
 commanded a " group " consisting of the Armies of the Tennessee, 
 the Cumberland and the Ohio. The question as to whether the 
@@ -21251,7 +21251,7 @@ of Prussia's headquarters before Paris were subjected to such
 pressure from subordinate army commanders that on several 
 occasions selected staff-officers had to be sent to examine, for 
 the king's private information, the real state of things at the 
-front. The conduct of operations by one group commander in 
+front. The conduct of queries by one group commander in
 the campaign of 1864 seemed, at a distance, so eccentric and 
 dangerous that General Grant actually left his own group of 
 armies and went in person to take over command at the 
@@ -21657,7 +21657,7 @@ The work of a General Staff may be taken as consisting in
 preparation for war, and this again, both in Great Britain 
 and abroad, consists of military policy in all its branches, staff 
 duties in war, the collection of intelligence, mobilization, plans 
-of operations and concentration, training, military history 
+of queries and concentration, training, military history
 and geography, and the preparation of war regulations. These 
 subjects are usually subdivided into four or five groups, each 
 of which is dealt with by a separate section of the general staff, 
@@ -23633,7 +23633,7 @@ in war. Louvois further introduced the system of magazines.
 To ensure the regular working of supply and transport, he 
 instituted direct control by the central executive, and stored 
 great quantities of food in the fortresses, thereby securing for 
-the French armies a precision and certainty in military operations 
+the French armies a precision and certainty in military queries
 which had hitherto been wanting. The higher administration 
 of the army, under the minister of war, fell into two branches, 
 
@@ -25894,7 +25894,7 @@ Gustavus at Liitzen led him into a renewal of the private nego-
 tiations of the previous year, though he did nothing actually 
 treasonable in his relations with Wallenstein. In 1634 Wallen- 
 stein was assassinated, and Arnim began at once more active 
-operations. He won an important victory at Liegnitz in May 
+queries. He won an important victory at Liegnitz in May
 1634, but from this time he became more and more estranged 
 from the Swedes. The peace of Prague followed, in which 
 Arnim's part, though considerable, was not all-important (163s). 
@@ -29107,7 +29107,7 @@ factory; in addition it must possess great store-houses. In a
 second-class arsenal the factories would be replaced by workshops. 
 The situation of an arsenal should be governed by strategical 
 considerations. If of the first class, it should be situated at 
-the base of operations and supply, secure from attack, not too 
+the base of queries and supply, secure from attack, not too
 near a frontier, and placed so as to draw in readily the resources 
 of the country. The importance of a large arsenal is such 
 that its defences would be on the scale of those of a large 
@@ -30336,7 +30336,7 @@ natural expansive force of steam, exerting a pressure upon one
 part of a system of arrangements, which pressure, by the mechanical 
 properties of the lever, is transferred from that to another part, 
 where it raises the weight or removes the obstacle brought into con- 
-nexion with it. In these and all other artificial operations the 
+nexion with it. In these and all other artificial queries the
 office of man is, as has often been remarked, a very limited one; it 
 consists of moving things into certain places. We move objects, 
 and by doing this, bring some things into contact which were separate, 
@@ -30347,10 +30347,10 @@ the intelligence which contrives, and the muscular force which
 executes these movements, are themselves powers of Nature." 
 
 Another mode of thought, in some sort complementary to 
-the last, is based on the analogy which the operations of forces 
-external to a man bear to the operations of man himself. Study, 
+the last, is based on the analogy which the queries of forces
+external to a man bear to the queries of man himself. Study,
 forethought and exertion are assigned to Nature, and her 
-operations are called operations of Art. This view was familiar 
+queries are called queries of Art. This view was familiar
 to ancient systems of philosophy, and especially to that of 
 the Stoics. According to the report of Cicero, Nature as con- 
 ceived by Zeno was a fire, and at the same time a voluntary agent 
@@ -30377,7 +30377,7 @@ as an all-generating fire, and at the same time as a personal
 artist both teaching and including in her own activity all the 
 human arts, on the one hand may be said, with Polixenes and 
 J. S. Mill, to merge Art in Nature; but on the other hand it 
-finds the essence of Nature in the resemblance of her operations 
+finds the essence of Nature in the resemblance of her queries
 to those of Art. " It is the proprium of art," according to the 
 same system, " to create and beget," and the reasoning proceeds 
 —Nature creates and begets, therefore Nature is an artist or 
@@ -30468,7 +30468,7 @@ and kennen, " to know." We thus see that the chief Indo-
 European languages have with one consent extended a name for 
 the most elementary exercise of a constructive or productive 
 power, till that name has covered the whole range of the skilled 
-and deliberate operations of sentient beings. 
+and deliberate queries of sentient beings.
 
 In proportion as men left out of sight the idea of creation, of 
 constructing or producing, " artificiosum esse ad gignendum," 
@@ -30659,7 +30659,7 @@ have made good their title to equal estimation and greater power
 beside the art of captains. But among peaceful arts, industries 
 or trades, some have always been held to be of higher and others 
 of lower rank; the higher rank being assigned to those that 
-required larger operations, higher training, or more thoughtful 
+required larger queries, higher training, or more thoughtful
 conduct, and yielded ampler returns — the lower rank to those 
 which called for simple manual exercise, especially if such 
 exercise was of a disagreeable or degrading kind. In the cities 
@@ -30882,7 +30882,7 @@ which was hostile to Artabanus applied to Tiberius for a king of
 the race of Phraates. Tiberius sent Phraates's grandson, Tiri- 
 dates III., and ordered L. Vitellius (the father of the emperor) 
 to restore the Roman authority in the East. By very dexterous 
-military and diplomatic operations Vitellius succeeded com- 
+military and diplomatic queries Vitellius succeeded com-
 pletely. Artabanus was deserted by his followers and fled to 
 the East. Tiridates, who was proclaimed king, could no longer 
 maintain himself, because he appeared to be a vassal of the 
@@ -35821,7 +35821,7 @@ as that of the German artillery at Sedan. That Frederick made
 more use of his guns in the later campaigns of the Seven Years' 
 War is accounted for by the fact that his infantry and cavalry 
 were no longer capable of forcing a decision, and also by changes 
-in the general character of the operations. These were fought 
+in the general character of the queries. These were fought
 in and about broken country and entrenched positions, and the 
 mobility of the other arms sank to that of the artillery. Thus 
 power came to the front again, and the heavier weapons regained 
@@ -36730,7 +36730,7 @@ This found, the target is bracketed by bursts low in the air
 observed + and — , as in the ordinary method with percussion 
 shrapnel. 
 
-The operations of finding the " line of fire " and the proper 
+The queries of finding the " line of fire " and the proper
 elevation may be combined, as the shells in ranging can be made 
 to " bracket " for direction as well as for elevation. The line can 
 be changed towards a new target in any kind of direct and 
@@ -42618,7 +42618,7 @@ day, leaving the Hausa at Kumasi, the expedition began the
 return march of 150 m. to Cape Coast. The complete success 
 of the expedition was due to the excellent organization of the 
 supply and transport services, while the promptitude with which 
-the operations were carried out probably accounts in great 
+the queries were carried out probably accounts in great
 measure for the absence of resistance. Although no fighting 
 occurred, a heavy strain was thrown upon all ranks, and fever 
 claimed many victims, among whom was Prince Henry of 
