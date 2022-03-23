@@ -62,8 +62,8 @@ public class Dictionary implements Serializable {
     }
 
     public String addDocumentAtDictionary(String docPath) {
-        //        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
-        // WARNING: if we add too document it can explode
+        // String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
+        // WARNING: if we add too documents it can explode
         boolean findFreeDocID = false;
         String docID = "";
         int MAX_TRIES = 100;
@@ -106,6 +106,8 @@ public class Dictionary implements Serializable {
             dictionary.put(token, postingList);
             positionOfToken.getAndIncrement();
         }
+
+        //the poosting list
 
         return docID;
         //TODO: trim the arrays of position of the posting of the document just added

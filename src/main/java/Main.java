@@ -1,5 +1,6 @@
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
+import miscellaneous.Command;
 import miscellaneous.Miscellaneous;
 import miscellaneous.QueryMode;
 import miscellaneous.SaveReadPersistentDictionary;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static miscellaneous.Command.*;
 
 public class Main {
 
@@ -40,8 +43,15 @@ public class Main {
 
             System.out.print("\nCommand: ");
             inputIsNextLine();
-            switch (input) {
-                case "add" -> {
+            Command command;
+            try {
+                command = valueOf(input);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid input");
+                continue;
+            }
+            switch (command) {
+                case add -> {
                     System.out.println("Path of the document to add at the dictionary:");
                     inputIsNextLine();
                     String newDocID = dictionary.addDocumentAtDictionary(input);
@@ -49,7 +59,7 @@ public class Main {
                         System.out.println("The docID " + newDocID + " has been successfully added");
                     }
                 }
-                case "addList" -> {
+                case addList -> {
                     System.out.println("Path of the document that contain the list of documents to add at the dictionary:");
                     inputIsNextLine();
                     ArrayList<String> listDocID = dictionary.addDocumentsFromListAtDictionary(input);
@@ -57,7 +67,7 @@ public class Main {
                         System.out.println("The docID " + docID + " has been successfully added");
                     }
                 }
-                case "r" -> {
+                case remove -> {
                     System.out.println("Which of this document you want to remove from the dictionary?");
                     dictionary.printDocumentList();
                     inputIsNextLine();
@@ -67,14 +77,14 @@ public class Main {
                     }
                 }
 
-                case "term" -> {
+                case term -> {
                     System.out.println("Which term do you want to search in the dictionary?");
                     inputIsNextLine();
                     ArrayList<String> listOfDocID = BooleanQueries.queryTerm(dictionary, input);
                     printResultDocumentList(listOfDocID);
                 }
 
-                case "mode" -> {
+                case mode -> {
                     System.out.println("Which bool mode for query? --> AND, OR, NOT");
                     inputIsNextLine();
 
@@ -94,7 +104,7 @@ public class Main {
                     System.out.println("The current mode is " + queryMode);
                 }
 
-                case "query" -> {
+                case query -> {
                     System.out.println("Which terms do you want in bool query? (" + queryMode + " mode)");
                     inputIsNextLine();
                     ArrayList<String> listOfToken = Tokenization.getNormalizeTokenListFromPhrase(input);
@@ -110,17 +120,17 @@ public class Main {
                     printResultDocumentList(listOfDocID);
                 }
 
-                case "phrasal query" -> {
+                case queryPh -> {
                     System.out.println("Which phrase do you want to search in the dictionary?");
                     inputIsNextLine();
                     PostingList listOfDocID = PhrasalQueries.phrasalQuery(dictionary, input);
                     printResultDocumentList(listOfDocID.getDocIDListAsArrayList());
                 }
 
-                case "dict" -> dictionary.printDictionary();
-                case "dictList" -> dictionary.printDocumentList();
+                case print -> dictionary.printDictionary();
+                case printList -> dictionary.printDocumentList();
 
-                case "stopWord" -> {
+                case stopWord -> {
                     System.out.println("WARNING: change stop word list can have strange behaviour!");
                     System.out.println("The possibility are: NONE, ESSENTIAL, STANDARD, EXTENDED");
                     System.out.println("The current stop word list size is " + dictionary.getStopWordListSize());
@@ -147,12 +157,11 @@ public class Main {
                     System.out.println("The current stop word list size is " + dictionary.getStopWordListSize());
                 }
 
-                case "help" -> printCommandPalette();
-                case "quit" -> {
+                case help -> printCommandPalette();
+                case quit -> {
                     System.out.println("### Exit ###");
                     continueOperation.set(false);
                 }
-
 
                 default -> System.out.println("Invalid input");
             }
@@ -233,24 +242,24 @@ public class Main {
     public static void printCommandPalette() {
         System.out.println("\n-------------------- Command palette --------------------");
         System.out.println("--- Dictionary");
-        System.out.println("add       - to add a document (must insert the correct path of the txt to add)");
-        System.out.println("addList   - to add a list of document (path of the file that contain the list)");
-        System.out.println("rmv       - to remove a document");
-        System.out.println("print     - to print the dictionary");
-        System.out.println("printList - to print the list of document");
+        System.out.println(add + "       - to add a document (must insert the correct path of the txt to add)");
+        System.out.println(addList + "   - to add a list of document (path of the file that contain the list)");
+        System.out.println(remove + "    - to remove a document");
+        System.out.println(print + "     - to print the dictionary");
+        System.out.println(printList + " - to print the list of document");
 
         System.out.println();
         System.out.println("--- Query");
-        System.out.println("mode      - to change bool mode for query");
-        System.out.println("term      - to search a term in the dictionary");
-        System.out.println("query     - to do a boolean query on the dictionary");
-        System.out.println("queryPh   - to search a phrase in the dictionary");
+        System.out.println(mode + "      - to change bool mode for query");
+        System.out.println(term + "      - to search a term in the dictionary");
+        System.out.println(query + "     - to do a boolean query on the dictionary");
+        System.out.println(queryPh + "   - to search a phrase in the dictionary");
 
         System.out.println();
         System.out.println("--- Options");
-        System.out.println("stopWord  - to change stop word list size");
-        System.out.println("help      - to print the command palette");
-        System.out.println("quit      - to exit the program");
+        System.out.println(stopWord + "  - to change stop word list size");
+        System.out.println(help + "      - to print the command palette");
+        System.out.println(quit + "      - to exit the program");
         System.out.println("\n---------------------------------------------------------");
     }
 
