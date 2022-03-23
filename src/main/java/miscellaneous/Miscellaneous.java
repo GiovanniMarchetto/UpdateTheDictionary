@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Miscellaneous {
-    public static final boolean DEBUG = false;
+    public static boolean DEBUG = false;
 
     public static ArrayList<String> getListOfLines(String listPath) {
         Scanner inputStream;

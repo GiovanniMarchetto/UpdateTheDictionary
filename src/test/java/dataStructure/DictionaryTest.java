@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BasicDictionaryTest {
+public class DictionaryTest {
 
     @Test
     void add_doc_A() {
