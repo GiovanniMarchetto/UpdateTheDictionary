@@ -149,7 +149,7 @@ public class Dictionary implements Serializable {
         });
 
         System.out.println("//////////////////////////////////");
-        System.out.println("//////////////////////////////////");
+        System.out.println("//////////////////////////////////\n");
     }
 
     public void printDocumentList() {
@@ -162,7 +162,7 @@ public class Dictionary implements Serializable {
                 System.out.println(doc);
             }
         }
-        System.out.println("******************************");
+        System.out.println("******************************\n");
     }
 
     public boolean containsTerm(String term) {
