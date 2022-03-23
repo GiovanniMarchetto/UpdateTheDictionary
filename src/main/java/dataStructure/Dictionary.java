@@ -17,9 +17,9 @@ import static operations.StopWord.setStopWordList;
 
 public class Dictionary implements Serializable {
 
+    private final HashMap<String, HashSet<String>> documentList;
     private StopWordSize stopWordListSize;
     private HashMap<String, PostingList> dictionary;
-    private final HashMap<String, HashSet<String>> documentList;
 
     public Dictionary() {
         dictionary = new HashMap<>();
@@ -112,7 +112,6 @@ public class Dictionary implements Serializable {
         this.documentList.put(docID, termListOfDocument);
 
         return docID;
-        //TODO: trim the arrays of position of the posting of the document just added
     }
 
     public String removeDocumentFromDictionary(String docID) {

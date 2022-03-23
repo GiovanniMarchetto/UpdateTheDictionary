@@ -49,7 +49,6 @@ public class PostingList implements Serializable {
         return this.postingList.containsKey(docID);
     }
 
-    //TODO: rename all getDocID methods like only getDocID
     public String[] getDocIDListAsArray() {
         return postingList.keySet().toArray(new String[0]);
     }
@@ -95,9 +94,7 @@ public class PostingList implements Serializable {
     }
 
     public void printPostingList() {
-        this.postingList.forEach((docID, listPosition) -> {
-            System.out.println("|---" + docID + " " + listPosition);
-        });
+        this.postingList.forEach((docID, listPosition) -> System.out.println("|---" + docID + " " + listPosition));
     }
 
 }
