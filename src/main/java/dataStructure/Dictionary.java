@@ -62,13 +62,25 @@ public class Dictionary implements Serializable {
     }
 
     public String addDocumentAtDictionary(String docPath) {
-        /*        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
+        //        String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
         // WARNING: if we add too document it can explode
-        //        while (this.documentList.contains(docID)) {
-        //            docID = UUID.randomUUID().toString().substring(0, 8);}
-        */
-        String docID = UUID.randomUUID().toString().substring(0, 8);
-        this.documentList.add(docID);
+        boolean findFreeDocID = false;
+        String docID = "";
+        int MAX_TRIES = 100;
+        for (int i = 0; i < MAX_TRIES; i++) {
+            docID = UUID.randomUUID().toString().substring(0, 8);
+            if (!this.documentList.contains(docID)) {
+                this.documentList.add(docID);
+                findFreeDocID = true;
+                break;
+            }
+        }
+
+        if (!findFreeDocID) {
+            System.err.println("FAIL THE ASSIGNATION OF A DOC ID");
+            return "";
+        }
+
 
         if (Miscellaneous.DEBUG) {
             System.out.println("\nAdd at the dictionary the document at path:");

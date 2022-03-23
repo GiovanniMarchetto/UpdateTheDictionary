@@ -16,11 +16,11 @@ public class SpeedTest {
 
         //add part A
         addPartOfDataset(dictionary, "A");
+
         //add part B
         ArrayList<String> docIdOfPartB = addPartOfDataset(dictionary, "B");
         dictionary.printDocumentList();
         System.out.println();
-
 
         //add part C
         addPartOfDataset(dictionary, "C");
