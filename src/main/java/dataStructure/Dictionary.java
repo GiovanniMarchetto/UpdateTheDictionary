@@ -6,7 +6,10 @@ import operations.StopWord;
 import operations.Tokenization;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static operations.StopWord.StopWordSize;
@@ -16,11 +19,11 @@ public class Dictionary implements Serializable {
 
     private StopWordSize stopWordListSize;
     private HashMap<String, PostingList> dictionary;
-    private ArrayList<String> documentList;
+    private final HashMap<String, HashSet<String>> documentList;
 
     public Dictionary() {
         dictionary = new HashMap<>();
-        documentList = new ArrayList<>();
+        documentList = new HashMap<>();
         stopWordListSize = StopWordSize.STANDARD;
         setStopWordList(stopWordListSize);
     }
@@ -43,11 +46,7 @@ public class Dictionary implements Serializable {
     }
 
     public ArrayList<String> getDocumentList() {
-        return documentList;
-    }
-
-    public void setDocumentList(ArrayList<String> documentList) {
-        this.documentList = documentList;
+        return new ArrayList<>(documentList.keySet());
     }
 
     public ArrayList<String> addDocumentsFromListAtDictionary(String listPath) {
@@ -62,15 +61,14 @@ public class Dictionary implements Serializable {
     }
 
     public String addDocumentAtDictionary(String docPath) {
-        // String docID = UUID.nameUUIDFromBytes(docPath.getBytes()).toString().substring(0, 8);
-        // WARNING: if we add too documents it can explode
         boolean findFreeDocID = false;
         String docID = "";
+
+        // WARNING: if we add too documents it can explode
         int MAX_TRIES = 100;
         for (int i = 0; i < MAX_TRIES; i++) {
             docID = UUID.randomUUID().toString().substring(0, 8);
-            if (!this.documentList.contains(docID)) {
-                this.documentList.add(docID);
+            if (!this.documentList.containsKey(docID)) {
                 findFreeDocID = true;
                 break;
             }
@@ -90,14 +88,18 @@ public class Dictionary implements Serializable {
 
         ArrayList<String> tokenList = Tokenization.getListOfTokenFromFile(docPath);
         if (tokenList == null) {
+            System.err.println("The document has not : the document is not added");
             return "";
         }
         Normalization.normalizeListOfString(tokenList);
         StopWord.removeStopWords(tokenList);
 
         AtomicInteger positionOfToken = new AtomicInteger(1);
+        HashSet<String> termListOfDocument = new HashSet<>();
 
         for (String token : tokenList) {
+            termListOfDocument.add(token);
+
             PostingList postingList = new PostingList();
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
@@ -107,7 +109,7 @@ public class Dictionary implements Serializable {
             positionOfToken.getAndIncrement();
         }
 
-        //the poosting list
+        this.documentList.put(docID, termListOfDocument);
 
         return docID;
         //TODO: trim the arrays of position of the posting of the document just added
@@ -115,10 +117,10 @@ public class Dictionary implements Serializable {
 
     public String removeDocumentFromDictionary(String docID) {
         try {
-            if (!documentList.contains(docID)) {
+            if (!documentList.containsKey(docID)) {
                 throw new Exception("Document ID input not valid");
             }
-            Set<String> termList = new HashSet<>(dictionary.keySet());
+            HashSet<String> termList = documentList.get(docID);
             for (String term : termList) {
                 PostingList termPostingList = dictionary.get(term);
                 termPostingList.removeDocID(docID);
@@ -160,7 +162,7 @@ public class Dictionary implements Serializable {
         if (this.documentList == null || this.documentList.isEmpty()) {
             System.out.println("The list is empty!");
         } else {
-            for (String doc : this.documentList) {
+            for (String doc : this.documentList.keySet()) {
                 System.out.println(doc);
             }
         }
