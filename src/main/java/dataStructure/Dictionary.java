@@ -122,7 +122,7 @@ public class Dictionary implements Serializable {
             HashSet<String> termList = documentList.get(docID);
             for (String term : termList) {
                 PostingList termPostingList = dictionary.get(term);
-                termPostingList.removeDocID(docID);
+                termPostingList.removePostingByDocID(docID);
                 if (termPostingList.size() == 0) {
                     dictionary.remove(term);
                 }

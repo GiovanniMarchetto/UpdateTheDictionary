@@ -22,25 +22,6 @@ public class PostingList implements Serializable {
         this.postingList = postingList;
     }
 
-    public void addPosting(String docID, int positionOfToken) {
-        ArrayList<Integer> listPositions = new ArrayList<>();
-        if (postingList.containsKey(docID)) {
-            listPositions = postingList.get(docID);
-        }
-        listPositions.add(positionOfToken);
-        this.postingList.put(docID, listPositions);
-    }
-
-    public void addPosting(String docID, ArrayList<Integer> listPositionsToAdd) {
-        ArrayList<Integer> listPositions = new ArrayList<>();
-        if (postingList.containsKey(docID)) {
-            listPositions = postingList.get(docID);
-        }
-        listPositions.addAll(listPositionsToAdd);
-        listPositions.sort(Integer::compareTo);
-        this.postingList.put(docID, listPositions);
-    }
-
     public int size() {
         return this.postingList.size();
     }
@@ -65,22 +46,41 @@ public class PostingList implements Serializable {
         return postingList.get(docID);
     }
 
-    public boolean removePositionOfDocID(Integer positionToRemove, String docID) {
-        ArrayList<Integer> oldList = postingList.get(docID);
-        oldList.remove(positionToRemove);
-        if (oldList.isEmpty()) {
-            return removeDocID(docID);
+    public void addPosting(String docID, int positionOfToken) {
+        ArrayList<Integer> listPositions = new ArrayList<>();
+        if (postingList.containsKey(docID)) {
+            listPositions = postingList.get(docID);
         }
-        postingList.replace(docID, oldList);
-        return true;
+        listPositions.add(positionOfToken);
+        this.postingList.put(docID, listPositions);
     }
 
-    public boolean removeDocID(String docID) {
+    public void addPosting(String docID, ArrayList<Integer> listPositionsToAdd) {
+        ArrayList<Integer> listPositions = new ArrayList<>();
+        if (postingList.containsKey(docID)) {
+            listPositions = postingList.get(docID);
+        }
+        listPositions.addAll(listPositionsToAdd);
+        listPositions.sort(Integer::compareTo);
+        this.postingList.put(docID, listPositions);
+    }
+
+    public boolean removePostingByDocID(String docID) {
         try {
             postingList.remove(docID);
         } catch (NullPointerException e) {
             return false;
         }
+        return true;
+    }
+
+    public boolean removePositionOfDocID(Integer positionToRemove, String docID) {
+        ArrayList<Integer> oldList = postingList.get(docID);
+        oldList.remove(positionToRemove);
+        if (oldList.isEmpty()) {
+            return removePostingByDocID(docID);
+        }
+        postingList.replace(docID, oldList);
         return true;
     }
 
