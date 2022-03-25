@@ -57,4 +57,11 @@ public class Miscellaneous {
                         "`--------------------~___~-------------------''");
     }
 
+    public static void printDocInfoIfDEBUG(String docPath, String docID) {
+        if (DEBUG) {
+            System.out.println("\nAdd at the dictionary the document at path:");
+            System.out.println(docPath);
+            System.out.println("with the alias: " + docID);
+        }
+    }
 }

@@ -17,12 +17,12 @@ import static operations.StopWord.setStopWordList;
 
 public class Dictionary implements Serializable {
 
+    private final HashMap<String, PostingList> dictionary;
     private final HashMap<String, HashSet<String>> documentList;
     private StopWordSize stopWordListSize;
-    private HashMap<String, PostingList> dictionary;
 
     public Dictionary() {
-        dictionary = new HashMap<>();
+        dictionary = new HashMap<>(2048);
         documentList = new HashMap<>();
         stopWordListSize = StopWordSize.STANDARD;
         setStopWordList(stopWordListSize);
@@ -35,14 +35,6 @@ public class Dictionary implements Serializable {
     public void setStopWordListSize(StopWordSize newStopWordListSize) {
         stopWordListSize = newStopWordListSize;
         setStopWordList(stopWordListSize);
-    }
-
-    public HashMap<String, PostingList> getDictionary() {
-        return dictionary;
-    }
-
-    public void setDictionary(HashMap<String, PostingList> dictionary) {
-        this.dictionary = dictionary;
     }
 
     public ArrayList<String> getDocumentList() {
@@ -61,11 +53,11 @@ public class Dictionary implements Serializable {
     }
 
     public String addDocumentAtDictionary(String docPath) {
-        boolean findFreeDocID = false;
         String docID = "";
 
         // WARNING: if we add too documents it can explode
         int MAX_TRIES = 100;
+        boolean findFreeDocID = false;
         for (int i = 0; i < MAX_TRIES; i++) {
             docID = UUID.randomUUID().toString().substring(0, 8);
             if (!this.documentList.containsKey(docID)) {
@@ -79,14 +71,9 @@ public class Dictionary implements Serializable {
             return "";
         }
 
+        Miscellaneous.printDocInfoIfDEBUG(docPath, docID);
 
-        if (Miscellaneous.DEBUG) {
-            System.out.println("\nAdd at the dictionary the document at path:");
-            System.out.println(docPath);
-            System.out.println("with the alias: " + docID);
-        }
-
-        ArrayList<String> tokenList = Tokenization.getListOfTokenFromFile(docPath);
+        ArrayList<String> tokenList = Tokenization.getTokenListFromFile(docPath);
         if (tokenList == null) {
             System.err.println("The document has not : the document is not added");
             return "";
@@ -94,22 +81,28 @@ public class Dictionary implements Serializable {
         Normalization.normalizeListOfString(tokenList);
         StopWord.removeStopWords(tokenList);
 
-        AtomicInteger positionOfToken = new AtomicInteger(1);
         HashSet<String> termListOfDocument = new HashSet<>();
 
-        for (String token : tokenList) {
+        for (int i = 0; i < tokenList.size(); i++) {
+            String token = tokenList.get(i);
             termListOfDocument.add(token);
 
             PostingList postingList = new PostingList();
             if (dictionary.containsKey(token)) {
                 postingList = dictionary.get(token);
             }
-            postingList.addPosting(docID, positionOfToken.get());
+            postingList.addPosting(docID, i + 1);
             dictionary.put(token, postingList);
-            positionOfToken.getAndIncrement();
         }
 
         this.documentList.put(docID, termListOfDocument);
+
+
+//        for (String term : termListOfDocument) {
+//            PostingList postingList = dictionary.get(term);
+//            postingList.trim(docID);
+//            dictionary.replace(term, postingList);
+//        }
 
         return docID;
     }

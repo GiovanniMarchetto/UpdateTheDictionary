@@ -97,4 +97,9 @@ public class PostingList implements Serializable {
         this.postingList.forEach((docID, listPosition) -> System.out.println("|---" + docID + " " + listPosition));
     }
 
+    public void trim(String docID) {
+        ArrayList<Integer> positionList = postingList.get(docID);
+        positionList.trimToSize();
+        postingList.replace(docID, positionList);
+    }
 }

@@ -13,7 +13,7 @@ public class Tokenization {
         return phraseArray;
     }
 
-    public static ArrayList<String> getListOfTokenFromFile(String docPath) {
+    public static ArrayList<String> getTokenListFromFile(String docPath) {
         Scanner inputStream;
         try {
             inputStream = new Scanner(new File(docPath));
