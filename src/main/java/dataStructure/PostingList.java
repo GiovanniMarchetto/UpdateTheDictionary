@@ -22,6 +22,14 @@ public class PostingList implements Serializable {
         this.postingList = postingList;
     }
 
+    public void mergePostingList(PostingList postingListToMerge) {
+        if (postingListToMerge != null) {
+            for (String newDocId : postingListToMerge.getDocIDListAsArrayList()) {
+                addPosting(newDocId, postingListToMerge.getListOfPositionOfDocID(newDocId));
+            }
+        }
+    }
+
     public int size() {
         return this.postingList.size();
     }

@@ -2,6 +2,7 @@ package queries;
 
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;
+import operations.StopWord;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,13 +11,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BooleanQueryTest {
 
+    public static final String resourcePath = System.getProperty("user.dir") + "\\src\\test\\resources\\";
+
     public static Dictionary dictionaryWithTestTextAB() {
         Dictionary dictionary = new Dictionary();
+        dictionary.setStopWordListSize(StopWord.StopWordSize.NONE);
 
-        String docPathA = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "A.txt";
+        String docPathA = resourcePath + "A.txt";
         dictionary.addDocumentAtDictionary(docPathA);
 
-        String docPathB = System.getProperty("user.dir") + "\\src\\test\\resources\\" + "B.txt";
+        String docPathB = resourcePath + "B.txt";
         dictionary.addDocumentAtDictionary(docPathB);
 
 //        dictionary.printDictionary();
@@ -27,7 +31,9 @@ public class BooleanQueryTest {
 
     public static Dictionary dictionaryWithTestTextABC() {
         Dictionary dictionary = new Dictionary();
-        dictionary.addDocumentsFromListAtDictionary(System.getProperty("user.dir") + "\\src\\test\\resources\\" + "listOfDocs.txt");
+        dictionary.setStopWordListSize(StopWord.StopWordSize.NONE);
+
+        dictionary.addDocumentsFromListAtDictionary(resourcePath + "listOfDocs.txt");
         return dictionary;
     }
 
