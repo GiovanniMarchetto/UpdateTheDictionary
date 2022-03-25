@@ -17,13 +17,19 @@ import static operations.StopWord.setStopWordList;
 
 public class Dictionary implements Serializable {
 
-    private final HashMap<String, PostingList> dictionary;
+    final int MAX_DOCUMENT_AUXILIARY = 10;
+    final int INITIAL_CAPACITY_INDEX = 1024;
+    private final HashMap<String, PostingList> mainIndex;
     private final HashMap<String, HashSet<String>> documentList;
+    private final HashMap<String, PostingList> auxiliaryIndex;
+    private final ArrayList<String> auxiliaryDocumentList;
     private StopWordSize stopWordListSize;
 
     public Dictionary() {
-        dictionary = new HashMap<>(2048);
+        auxiliaryIndex = new HashMap<>(INITIAL_CAPACITY_INDEX);
+        mainIndex = new HashMap<>(INITIAL_CAPACITY_INDEX);
         documentList = new HashMap<>();
+        auxiliaryDocumentList = new ArrayList<>(MAX_DOCUMENT_AUXILIARY);
         stopWordListSize = StopWordSize.STANDARD;
         setStopWordList(stopWordListSize);
     }
@@ -88,14 +94,20 @@ public class Dictionary implements Serializable {
             termListOfDocument.add(token);
 
             PostingList postingList = new PostingList();
-            if (dictionary.containsKey(token)) {
-                postingList = dictionary.get(token);
+            if (auxiliaryIndex.containsKey(token)) {
+                postingList = auxiliaryIndex.get(token);
             }
             postingList.addPosting(docID, i + 1);
-            dictionary.put(token, postingList);
+            auxiliaryIndex.put(token, postingList);
         }
 
         this.documentList.put(docID, termListOfDocument);
+        this.auxiliaryDocumentList.add(docID);
+
+        if (auxiliaryDocumentList.size() > MAX_DOCUMENT_AUXILIARY
+                || auxiliaryIndex.size() > INITIAL_CAPACITY_INDEX / 3) {
+            mergeIndexes();
+        }
 
 
 //        for (String term : termListOfDocument) {
@@ -107,19 +119,42 @@ public class Dictionary implements Serializable {
         return docID;
     }
 
+    public void mergeIndexes() {
+        for (String docId : auxiliaryDocumentList) {
+            for (String term : documentList.get(docId)) {
+                PostingList finalPostingList = auxiliaryIndex.get(term);
+                finalPostingList.mergePostingList(mainIndex.get(term));
+                mainIndex.put(term, finalPostingList);
+            }
+        }
+        auxiliaryIndex.clear();
+        auxiliaryDocumentList.clear();
+    }
+
     public String removeDocumentFromDictionary(String docID) {
         try {
             if (!documentList.containsKey(docID)) {
                 throw new Exception("Document ID input not valid");
             }
             HashSet<String> termList = documentList.get(docID);
+
+            HashMap<String, PostingList> correctIndex;
+
+            if (auxiliaryDocumentList.contains(docID)) {
+                correctIndex = auxiliaryIndex;
+                auxiliaryDocumentList.remove(docID);
+            } else {
+                correctIndex = mainIndex;
+            }
+
             for (String term : termList) {
-                PostingList termPostingList = dictionary.get(term);
+                PostingList termPostingList = correctIndex.get(term);
                 termPostingList.removePostingByDocID(docID);
                 if (termPostingList.size() == 0) {
-                    dictionary.remove(term);
+                    correctIndex.remove(term);
                 }
             }
+
             documentList.remove(docID);
             return docID;
         } catch (Exception e) {
@@ -131,18 +166,28 @@ public class Dictionary implements Serializable {
     public void printDictionary() {
         System.out.println("\n//////////  DICTIONARY  //////////");
 
-        AtomicInteger counter = new AtomicInteger();
-        this.dictionary.forEach((term, postingList) -> {
+        HashSet<String> allTerms = new HashSet<>();
+        for (String docId : documentList.keySet()) {
+            allTerms.addAll(documentList.get(docId));
+        }
 
+        AtomicInteger counter = new AtomicInteger();
+        for (String term : allTerms) {
             if (counter.get() % 2 != 0) {
                 System.out.print("\t \t \t \t \t");
             }
             System.out.println(term);
 
-            postingList.printPostingListForDictionary(counter);
+            PostingList postingListAux = auxiliaryIndex.get(term);
+            if (postingListAux != null)
+                postingListAux.printPostingListForDictionary(counter);
+
+            PostingList postingListMain = mainIndex.get(term);
+            if (postingListMain != null)
+                postingListMain.printPostingListForDictionary(counter);
 
             counter.getAndIncrement();
-        });
+        }
 
         System.out.println("//////////////////////////////////");
         System.out.println("//////////////////////////////////\n");
@@ -162,13 +207,18 @@ public class Dictionary implements Serializable {
     }
 
     public boolean containsTerm(String term) {
-        return dictionary.containsKey(term);
+        return mainIndex.containsKey(term) || auxiliaryIndex.containsKey(term);
     }
 
     public PostingList getPostingList(String term) {
-        if (dictionary.containsKey(term)) {
-            return dictionary.get(term);
+        PostingList result = new PostingList();
+        if (mainIndex.containsKey(term)) {
+            result.mergePostingList(mainIndex.get(term));
         }
-        return new PostingList();
+        if (auxiliaryIndex.containsKey(term)) {
+            result.mergePostingList(mainIndex.get(term));
+        }
+
+        return result;
     }
 }

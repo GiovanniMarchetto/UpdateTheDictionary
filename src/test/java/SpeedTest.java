@@ -9,8 +9,39 @@ public class SpeedTest {
 
     @Test
     void speedTestOfAddingAndRemoving() {
-//        Miscellaneous.DEBUG = true;
         Miscellaneous.testTitleFormatting("TEST-SPEED");
+
+        Dictionary dictionary = new Dictionary();
+
+        //add part A
+        addPartOfDataset(dictionary, "A");
+
+        //add part B
+        ArrayList<String> docIdOfPartB = addPartOfDataset(dictionary, "B");
+        System.out.println();
+        dictionary.mergeIndexes();
+
+        //add part C
+        addPartOfDataset(dictionary, "C");
+
+
+        //remove part B
+        long startTime = System.currentTimeMillis();
+        for (String docId : docIdOfPartB) {
+            long partial = System.currentTimeMillis();
+            dictionary.removeDocumentFromDictionary(docId);
+            System.out.println("Partial: " + (System.currentTimeMillis() - partial) + " --> removing " + docId);
+        }
+        System.out.println("Total time to rmv of part B: " + (System.currentTimeMillis() - startTime));
+        dictionary.printDocumentList();
+
+
+//        Miscellaneous.DEBUG = false;
+    }
+
+    @Test
+    void speedTestOfAddingAndRemovingAutomatic() {
+        Miscellaneous.testTitleFormatting("TEST-SPEED-AUTOMATIC");
 
         Dictionary dictionary = new Dictionary();
 
