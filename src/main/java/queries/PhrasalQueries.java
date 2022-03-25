@@ -135,7 +135,7 @@ public class PhrasalQueries {
             }
         }
 
-        int positionOfLastWord = indexOfLastWordExamined + 1;
+        int positionOfLastWord = indexOfLastWordExamined;
 
         return getAnswerPostingListWithPositionOfTheStartOfPhrase(dictionary, positionOfLastWord, firstWordNonStopWord, filteredPostingList);
 
