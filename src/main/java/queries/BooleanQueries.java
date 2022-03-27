@@ -2,6 +2,7 @@ package queries;
 
 import dataStructure.Dictionary;
 import dataStructure.PostingList;
+import miscellaneous.QueryMode;
 import miscellaneous.SortBySize;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class BooleanQueries {
     public static ArrayList<String> queryAND(Dictionary dictionary, ArrayList<String> words) {
         words.sort(new SortBySize()); // heuristic: bigger-->less documents should contain it
         // first word
-        ArrayList<String> resultDocList = queryTerm(dictionary,words.get(0));
+        ArrayList<String> resultDocList = queryTerm(dictionary, words.get(0));
 
         for (String word : words) {
             if (resultDocList.isEmpty()) {
@@ -67,5 +68,25 @@ public class BooleanQueries {
         return resultDocList;
     }
 
+    public static ArrayList<String> queryBetweenTwoListOfDocID(
+            ArrayList<String> list1, ArrayList<String> list2, QueryMode queryMode) {
+        switch (queryMode) {
+            case AND -> {
+                list1.removeIf(docId -> !list2.contains(docId));
+                return list1;
+            }
+            case OR -> {
+                list2.removeIf(list1::contains);
+                list1.addAll(list2);
+                return list1;
+            }
+            case NOT -> {
+                //suppose the first element is the document list of dictionary
+                list1.removeIf(list2::contains);
+                return list1;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + queryMode);
+        }
+    }
 
 }
