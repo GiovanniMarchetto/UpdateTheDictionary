@@ -17,54 +17,60 @@ public class BooleanQueries {
         return new ArrayList<>(Arrays.asList(docIDList));
     }
 
-    public static ArrayList<String> queryAND(Dictionary dictionary, ArrayList<String> words) {
-        words.sort(new SortBySize()); // heuristic: bigger-->less documents should contain it
-        // first word
-        ArrayList<String> resultDocList = queryTerm(dictionary, words.get(0));
+    public static ArrayList<String> booleanQuery(Dictionary dictionary, ArrayList<String> words, QueryMode queryMode) {
+        ArrayList<String> resultDocList;
+        switch (queryMode) {
 
-        for (String word : words) {
-            if (resultDocList.isEmpty()) {
-                return resultDocList;
-            }
+            case AND -> {
+                words.sort(new SortBySize()); // heuristic: bigger-->less documents should contain it
+                // first word
+                resultDocList = queryTerm(dictionary, words.get(0));
 
-            PostingList postingList = dictionary.getPostingList(word);
-            Set<String> docIDList = postingList.getDocIDListAsSet();
-            resultDocList.removeIf(docID -> !docIDList.contains(docID));
-        }
+                for (String word : words) {
+                    if (resultDocList.isEmpty()) {
+                        return resultDocList;
+                    }
 
-        return resultDocList;
-    }
-
-    public static ArrayList<String> queryOR(Dictionary dictionary, ArrayList<String> words) {
-        ArrayList<String> resultDocList = new ArrayList<>();
-
-        for (String word : words) {
-            if (!dictionary.containsTerm(word)) {
-                continue;
-            }
-            PostingList postingList = dictionary.getPostingList(word);
-            String[] docIDList = postingList.getDocIDListAsArray();
-            for (String docId : docIDList) {
-                if (!resultDocList.contains(docId)) {
-                    resultDocList.add(docId);
+                    PostingList postingList = dictionary.getPostingList(word);
+                    Set<String> docIDList = postingList.getDocIDListAsSet();
+                    resultDocList.removeIf(docID -> !docIDList.contains(docID));
                 }
             }
-        }
-        return resultDocList;
-    }
 
-    public static ArrayList<String> queryNOT(Dictionary dictionary, ArrayList<String> words) {
-        ArrayList<String> resultDocList = dictionary.getDocumentList();
+            case OR -> {
+                resultDocList = new ArrayList<>();
 
-        for (String word : words) {
-            if (dictionary.containsTerm(word)) {
-                PostingList postingList = dictionary.getPostingList(word);
-                String[] docIDList = postingList.getDocIDListAsArray();
-                for (String docID : docIDList) {
-                    resultDocList.remove(docID);
+                for (String word : words) {
+                    if (!dictionary.containsTerm(word)) {
+                        continue;
+                    }
+                    PostingList postingList = dictionary.getPostingList(word);
+                    String[] docIDList = postingList.getDocIDListAsArray();
+                    for (String docId : docIDList) {
+                        if (!resultDocList.contains(docId)) {
+                            resultDocList.add(docId);
+                        }
+                    }
                 }
             }
+
+            case NOT -> {
+                resultDocList = dictionary.getDocumentList();
+
+                for (String word : words) {
+                    if (dictionary.containsTerm(word)) {
+                        PostingList postingList = dictionary.getPostingList(word);
+                        String[] docIDList = postingList.getDocIDListAsArray();
+                        for (String docID : docIDList) {
+                            resultDocList.remove(docID);
+                        }
+                    }
+                }
+            }
+
+            default -> throw new IllegalStateException("Unexpected value: " + queryMode);
         }
+
         return resultDocList;
     }
 

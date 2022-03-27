@@ -2,6 +2,7 @@ package queries;
 
 import dataStructure.Dictionary;
 import miscellaneous.Miscellaneous;
+import miscellaneous.QueryMode;
 import operations.StopWord;
 import org.junit.jupiter.api.Test;
 
@@ -52,7 +53,7 @@ public class BooleanQueryTest {
 
         ArrayList<String> words = baseSelectionOfWords();
 
-        assertEquals(1, BooleanQueries.queryAND(dictionary, words).size());
+        assertEquals(1, BooleanQueries.booleanQuery(dictionary, words, QueryMode.AND).size());
     }
 
     @Test
@@ -63,7 +64,7 @@ public class BooleanQueryTest {
 
         ArrayList<String> words = baseSelectionOfWords();
 
-        assertEquals(2, BooleanQueries.queryOR(dictionary, words).size());
+        assertEquals(2, BooleanQueries.booleanQuery(dictionary, words, QueryMode.OR).size());
 
     }
 
@@ -75,7 +76,7 @@ public class BooleanQueryTest {
 
         ArrayList<String> words = baseSelectionOfWords();
 
-        assertEquals(0, BooleanQueries.queryNOT(dictionary, words).size());
+        assertEquals(0, BooleanQueries.booleanQuery(dictionary, words, QueryMode.NOT).size());
 
     }
 
@@ -87,7 +88,7 @@ public class BooleanQueryTest {
 
         ArrayList<String> words = advSelectionOfWords();
 
-        assertEquals(0, BooleanQueries.queryAND(dictionary, words).size());
+        assertEquals(0, BooleanQueries.booleanQuery(dictionary, words, QueryMode.AND).size());
 
     }
 

@@ -108,14 +108,9 @@ public class Main {
                     System.out.println("Which terms do you want in bool query? (" + queryMode + " mode)");
                     inputIsNextLine();
                     ArrayList<String> listOfToken = Tokenization.getNormalizeTokenListFromPhrase(input);
-                    ArrayList<String> listOfDocID;
-
-                    switch (queryMode) {
-                        case AND -> listOfDocID = BooleanQueries.queryAND(dictionary, listOfToken);
-                        case OR -> listOfDocID = BooleanQueries.queryOR(dictionary, listOfToken);
-                        case NOT -> listOfDocID = BooleanQueries.queryNOT(dictionary, listOfToken);
-                        default -> throw new IllegalStateException("Unexpected value: " + queryMode);
-                    }
+                    StopWord.removeStopWords(listOfToken);
+                    System.out.println("The terms that enter in the query are : " + listOfToken);
+                    ArrayList<String> listOfDocID = BooleanQueries.booleanQuery(dictionary, listOfToken, queryMode);
 
                     printResultDocumentList(listOfDocID);
                 }
